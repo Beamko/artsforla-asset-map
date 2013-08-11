@@ -1,13 +1,13 @@
-var $messages = $('#messages');
-var $disciplines = $('.checkbox input');
-var $orgType = $('#org-type');
-var $activities = $('#arts-activities');
-var filters = {};
+var $messages = $('#messages'),
+	$disciplines = $('.checkbox input'),
+	$railLines = $('#rail-lines'),
+	tableName = "cultural_asset_list_2",
+	filters = {};
 
 function serialize(filters, layer) {
 	var searchTerms = [];
-	var query = $.isEmptyObject(filters) ? "SELECT * FROM cultural_asset_list_2" : "SELECT * FROM cultural_asset_list_2 WHERE ";
-	console.log('object count', Object.keys(filters).length);
+	var query = $.isEmptyObject(filters) ? "SELECT * FROM " + tableName : "SELECT * FROM "+ tableName + " WHERE ";
+
 	/*add filter properties to query string*/
 	if ( Object.keys(filters).length ) {
 		for (key in filters) {
@@ -24,7 +24,7 @@ function serialize(filters, layer) {
 			}
 		}
 	}
-	console.log('query ', query);
+	console.log(query);
 	//$messages.html('RESULTS FOR : ' + searchString.toUpperCase() );
 	layer.setQuery(query);
 }
@@ -32,6 +32,7 @@ function serialize(filters, layer) {
 function createSelector(layer) {	
 	var searchTerms = [];
 
+	/*multi-checkbox filter*/
 	$disciplines.click(function(e) {
 		var searchString = "";
 		
@@ -56,25 +57,28 @@ function createSelector(layer) {
 		}
 		serialize(filters, layer);
 	});
-	
-	$orgType.change( function (e) {
-		var orgType = $("option:selected",this).val();
-		if (orgType !== "Any" ) {
-			filters.orgType = "organizational_type_s ILIKE '%" +orgType + "%'";
-		} else {
-			delete filters.orgType;
-		}
-		serialize(filters, layer);
+
+	/*standard select filter from cartoDB*/
+	$('.js-selectFilter').change(function(e) {
+		
+		/*show child-filter, if any*/		
+		var filter = $("option:selected",this)[0].dataset;
+	    	'target' in filter ? $('#' + filter.target).removeClass('u-isHiddenVisually') : 
+	    		$(this).siblings('.js-childFilter').addClass('u-isHiddenVisually');
+
+	    	/*generate query*/  	
+	    	var queryColumn = this.dataset.column;
+	    	var value = $("option:selected",this).val();
+	    	value !== "Any" ? filters[queryColumn] = queryColumn + " ILIKE '%" + value + "%'" : delete filters[queryColumn];
+	    	serialize(filters, layer);
 	});
 
-	$activities.change( function (e) {
-		var activities = $("option:selected",this).val();
-		if (activities !== "Any" ) {
-			filters.activities = "art_activities ILIKE '%"+activities+"%'";
-		} else {
-			delete filters.activities;
-		}
-		serialize(filters, layer);
+	/*standard select child filter from cartoDB*/
+	$('.js-childFilter').change(function(e) {
+		var queryColumn = this.dataset.column;
+	    	var value = $("option:selected",this).val();
+	    	value !== "Any" ? filters[queryColumn] = queryColumn + " ILIKE '%" + value + "%'" : delete filters[queryColumn];
+	    	serialize(filters, layer);
 	});
 
 }

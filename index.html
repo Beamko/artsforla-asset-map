@@ -42,28 +42,63 @@
 
 							<fieldset>
 								<legend>Organization Type</legend>
-									<select name="" id="org-type">
-											<option value=" ">Any</option>
-											<option value="Presenting">Presenting</option>
-											<option value="Educational">Educational</option>
-											<option value="Community">Community</option>
+									<select name="" id="org_type" class="js-selectFilter" data-column="org_type">
+											<option value="Any">Any</option>
+											<option value="Presenting" data-target="presenting_orgs">Presenting</option>
+											<option value="Educational" data-target="educational_orgs">Educational</option>
+											<option value="Community" data-target="community_orgs">Community</option>
 											<option value="Infrastructure">Infrastructure</option>
 											<option value="Multi">Multi</option>
+									</select>
+									<select name="" id="presenting_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+										<option value="Any">Any</option>
+										<option value="Bookstores">Bookstores</option>
+										<option value="Church">Church</option>
+										<option value="Cinema/Film Venue">Cinema/Film Venue</option>
+										<option value="Commercial Gallery">Commercial Gallery</option>
+										<option value="Individual (artist)">Individual (artist)</option>
+										<option value="Museum">Museum</option>
+										<option value="NFP Gallery">NFP Gallery</option>
+										<option value="Publication">Publication</option>
+									</select>
+									<select name="" id="educational_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+										<option value="Any">Any</option>
+										<option value="Arts Ed">Arts Education</option>
+										<option value="Library">Library</option>
+										<option value="Studio Facility/Classes">Studio Facility/Classes</option>
+									</select>
+									<select name="" id="community_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+										<option value="Any">Any</option>
+										<option value="Collective (artist)">Collective (artist)</option>
+										<option value="Collective (other)">Collective (other)</option>
+										<option value="Community Center">Community Center</option>
+										<option value="Community Group">Community Group</option>
+										<option value="Individual (other)">Individual (other)</option>
+										<option value="Social Service Org">Social Service Org</option>
+									</select>
+									<select name="" id="infrastructure_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+										<option value="Any">Any</option>
+										<option value="Artists Housing">Artists Housing</option>
+										<option value="Arts Service Org">Arts Service</option>
+										<option value="Funder">Funder</option>
+										<option value="Presenting Org">Presenting Org</option>
+										<option value="Residency">Residency</option>
 									</select>
 							</fieldset>
 	
 						<fieldset>
 							<legend>Organization Size</legend>
-							<select name="" id="">
+							<select name="" id="org_size" class="js-selectFilter" data-column="org_size">
 								<option value="Any">Any </option>
 								<option value="Small">Small</option>
 								<option value="Medium">Medium</option>
-								<option value="Large">Large</option></select>
+								<option value="Large">Large</option>
+							</select>
 						</fieldset>
 
 						<fieldset>
 							<legend>Arts Activities</legend>
-							<select name="" id="arts-activities">
+							<select name="" id="art_activities" class="js-selectFilter" data-column="art_activities">
 								<option value="Any">Any </option>
 								<option value="Book Reading/Signing">Book Reading/Signing</option>
 								<option value="Class">Class</option>
@@ -84,16 +119,16 @@
 
 						<fieldset>
 							<legend>Line Info</legend>
-							<label for="rail-lines">Rail Line:</label>
-									<select name="" id="rail-lines">
-											<option value="any">All Lines</option>
-											<option value="blueLine">Blue Line</option>
+							<label for="rail_lines">Rail Line:</label>
+									<select name="" id="rail-lines" class="js-selectFilter" data-column="nearest_rail_line">
+											<option value="Any">All Lines</option>
+											<option value="blueLine" data-target="blueLineStops">Blue Line</option>
 											<option value="expoLine">Expo Line</option>
 											<option value="goldLine">Gold Line</option>
 											<option value="greenLine">Green Line</option>
 											<option value="redLine">Red/Purple Line</option>
 									</select>
-									<select id="rail-stops" style="display:none;">
+									<select id="blueLineStops" class="u-isHiddenVisually js-childFilter" data-column="nearest_rail_line_stop">
 										<option value="all">List of Stops on Line</option>
 									</select>
 							<p>-or-</p>
