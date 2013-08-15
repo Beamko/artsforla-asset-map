@@ -3,7 +3,7 @@
 <head>
 	<title>Arts For LA</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-	<script src="libs/cartodb.js"></script>
+	<script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
 	<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
 	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/main.css" />
@@ -120,16 +120,18 @@
 						<fieldset>
 							<legend>Line Info</legend>
 							<label for="rail_lines">Rail Line:</label>
-									<select name="" id="rail-lines" class="js-selectFilter" data-column="nearest_rail_line">
+									<select name="" id="rail-lines" class="js-selectFilter" data-column="metro_line">
 											<option value="Any">All Lines</option>
-											<option value="blueLine" data-target="blueLineStops">Blue Line</option>
-											<option value="expoLine">Expo Line</option>
-											<option value="goldLine">Gold Line</option>
-											<option value="greenLine">Green Line</option>
-											<option value="redLine">Red/Purple Line</option>
+											<option value="Blue Line" data-mblayer="blueLine">Blue Line</option>
+											<option value="expoLine" data-mblayer="expoLine">Expo Line</option>
+											<option value="Gold Line" data-target="goldLineStops" data-mblayer="goldLine">Gold Line</option>
+											<option value="greenLine" data-mblayer="greenLine">Green Line</option>
+											<option value="redLine" data-mblayer="redLine">Red/Purple Line</option>
 									</select>
-									<select id="blueLineStops" class="u-isHiddenVisually js-childFilter" data-column="nearest_rail_line_stop">
-										<option value="all">List of Stops on Line</option>
+									<select id="goldLineStops" class="u-isHiddenVisually js-childFilter" data-column="metro_stop">
+										<option value="Any">All Stops</option>
+										<option value="Sierra Madre Villa">Sierra Madre Villa</option>
+										<option value="Allen">Allen</option>
 									</select>
 							<p>-or-</p>
 							<label for="community">Community</label>
