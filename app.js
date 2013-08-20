@@ -1,3 +1,5 @@
+require(['lodash','geojson/blueLine','geojson/expoLine','geojson/goldLine','geojson/greenLine','geojson/redLine'], function (_,BlueLine,ExpoLine,GoldLine,GreenLine,RedLine) {
+
 var $messages = $('#messages'),
 	$disciplines = $('.checkbox input'),
 	$railLines = $('#rail-lines'),
@@ -5,7 +7,9 @@ var $messages = $('#messages'),
 	//cartoViz = "http://cs-chris.cartodb.com/api/v2/viz/7aaa7842-eb50-11e2-ab8e-61f262e10947/viz.json",
 	tableName = "lan_data_set",
 	cartoViz = "http://cs-chris.cartodb.com/api/v2/viz/1c721cc6-0545-11e3-8ab0-796eb9e49271/viz.json",
-	filters = {};
+	filters = {},
+	selectedLine = "",
+	self=this;
 
 function serialize(filters, layer) {
 	var searchTerms = [];
@@ -84,9 +88,57 @@ function createSelector(layer) {
 	    	serialize(filters, layer);
 	});
 
+	/*rail line selector*/
+	$railLines.change(function() {
+		/*show stops selector*/
+		var filter = $("option:selected",this)[0].dataset;
+		$('.js-metroChildFilter').addClass('u-isHiddenVisually');
+		if ('target' in filter) { $('#' + filter.target).removeClass('u-isHiddenVisually'); } 
+    		
+		
+		/*draw rail line*/
+		var url = "http://a.tiles.mapbox.com/v3/civservchris.metroLines/{z}/{x}/{y}.png";
+		if ( "mblayer" in filter)  url = "http://a.tiles.mapbox.com/v3/civservchris."+filter.mblayer+"/{z}/{x}/{y}.png" ;
+		railLines.setUrl( url );
+
+		/*submit query*/
+		if ("station" in filters) delete filters.station;
+		var railLine = $("option:selected",this).val(),
+			query = "ST_Distance(the_geom::geography, ST_GeomFromText('LINESTRING(";
+		if ( railLine !== "Any" ) { 
+			_.forEach(self[railLine].features, function(data) {
+			 	query += data.properties.POINT_X + " " + data.properties.POINT_Y +",";
+			});
+			query = query.substr(0, query.length - 1);
+			query += ")', 4326)::geography) < 1609.344";
+			SelectedLine = query;
+			filters.line = query; 
+		} else { 
+			delete filters.line;
+		}
+		serialize(filters, layer);
+	});
+
+	$('.js-metroChildFilter').change(function() {
+		if ("line" in filters) delete filters.line; 
+		var queryColumn = this.dataset.column, 
+			railLine = this.dataset.line,
+			value = $("option:selected",this).val(),
+			stop = _.find(self[railLine].features, {"properties" : {'STATION' : value } });
+
+		if ( value !== "Any" ) { 
+			filters.station = "ST_Distance(the_geom::geography, ST_PointFromText('POINT(" +stop.properties.POINT_X+" " + stop.properties.POINT_Y + ")', 4326)::geography) < 1609.344" 
+		} else {
+			delete filters.station;
+			filters.line = SelectedLine;
+		}
+
+		serialize(filters, layer);
+	});
+
 }
 
-/*instantiate map and add  base layers*/
+// /*instantiate map and add  base layers*/
  var map = new L.Map('map', {
 	center: [34.056,-118.235],
 	zoom: 11
@@ -101,22 +153,13 @@ var railLines = L.tileLayer('http://a.tiles.mapbox.com/v3/civservchris.metroLine
 });
 railLines.addTo(map);
 
-
-/*rail line selector*/
-$('#rail-lines').change(function() {
-	var filter = $("option:selected",this)[0].dataset;
-	var url = "http://a.tiles.mapbox.com/v3/civservchris.metroLines/{z}/{x}/{y}.png";
-	if ( "mblayer" in filter)  url = "http://a.tiles.mapbox.com/v3/civservchris."+filter.mblayer+"/{z}/{x}/{y}.png" ;
-	railLines.setUrl( url );
-});
-
-/*load cartoDB markers*/
+// /*load cartoDB markers*/
 var markerLayer = cartodb.createLayer(map, cartoViz);
 markerLayer.addTo(map)
 	.on('done', function(layer) {
 			layer.setInteraction(true);
 			createSelector(layer);
-	});
+});
 
-
+});
 
