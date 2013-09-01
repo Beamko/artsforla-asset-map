@@ -118,7 +118,7 @@ function createSelector(layer) {
 		}
 		serialize(filters, layer);
 	});
-
+	/*rail line child filter*/
 	$('.js-metroChildFilter').change(function() {
 		if ("line" in filters) delete filters.line; 
 		var queryColumn = this.dataset.column, 
@@ -159,7 +159,6 @@ markerLayer.addTo(map)
 	.on('done', function(layer) {
 			layer.setInteraction(true);
 			createSelector(layer);
-});
-
+	});
 });
 
