@@ -1,5 +1,34 @@
+/*********************
+ NORMALIZE 
+*********************/
 @import "vendor/normalize";
+@import "vendor/suit-base";
 
-@import "components/suit";
+/*********************
+ VENDOR 
+*********************/
+//@import "vendor/bootstrap-tooltip";
 
+/*********************
+ GLOBAL SETTINGS 
+*********************/
+@import "globals/settings";
+@import "globals/mixins";
+
+/*********************
+ COMPONENTS 
+*********************/
+@import "components/dimension";
+@import "components/layout";
+@import "components/state";
+
+/*********************
+ THEMES 
+*********************/
+@import "themes/primary";
+
+/*********************
+ PARTIALS 
+*********************/
 @import "partials/base";
+@import "partials/tooltip";

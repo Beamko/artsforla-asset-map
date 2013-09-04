@@ -1,251 +1,276 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Arts For LA</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-  <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
-  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
-  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+	<title>Arts For LA</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+	<script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+	<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+	<link rel="stylesheet" href="css/chosen.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
 <!--[if lte IE 8]>
-  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" />
+	<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" />
 <![endif]-->
 </head>
 <body>
-<div class="container-fluid full-height">
-  <div class="row-fluid full-height">
-    <div class="map-controller span3">
-        <div class="legend"></div>
-        <div class="filters">
-          <form>
-              <fieldset>
-                  <legend>Discipline</legend>           
-                  <label class="checkbox inline">
-                      <input type="checkbox" id="dance" value="Dance"> Dance
-                  </label>
-                  <label class="checkbox inline">
-                      <input type="checkbox" id="film" value="Film"> Film
-                  </label>
-                  <label class="checkbox inline">
-                      <input type="checkbox" id="literary" value="Literary"> Literary
-                  </label>
-                  <label class="checkbox inline">
-                      <input type="checkbox" id="music" value="Music"> Music
-                  </label>
-                  <label class="checkbox inline">
-                      <input type="checkbox" id="theater" value="Theater"> Theater
-                  </label>
-                  <label class="checkbox inline">
-                      <input type="checkbox" id="visual" value="Visual"> Visual
-                  </label>
-              </fieldset>
+<div class="full-height">
+	<header class="top-menu">
+		<div class="logo"><img class="flex-image" src="assets/logo.jpg" /></div>
+	</header>
 
-              <fieldset>
-                <legend>Organization Type</legend>
-                  <select name="" id="org_type" class="js-selectFilter" data-column="org_type">
-                      <option value="Any">Any</option>
-                      <option value="Presenting" data-target="presenting_orgs">Presenting</option>
-                      <option value="Educational" data-target="educational_orgs">Educational</option>
-                      <option value="Community" data-target="community_orgs">Community</option>
-                      <option value="Infrastructure">Infrastructure</option>
-                      <option value="Multi">Multi</option>
-                  </select>
-                  <select name="" id="presenting_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
-                    <option value="Any">Any</option>
-                    <option value="Bookstores">Bookstores</option>
-                    <option value="Church">Church</option>
-                    <option value="Cinema/Film Venue">Cinema/Film Venue</option>
-                    <option value="Commercial Gallery">Commercial Gallery</option>
-                    <option value="Individual (artist)">Individual (artist)</option>
-                    <option value="Museum">Museum</option>
-                    <option value="NFP Gallery">NFP Gallery</option>
-                    <option value="Publication">Publication</option>
-                  </select>
-                  <select name="" id="educational_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
-                    <option value="Any">Any</option>
-                    <option value="Arts Ed">Arts Education</option>
-                    <option value="Library">Library</option>
-                    <option value="Studio Facility/Classes">Studio Facility/Classes</option>
-                  </select>
-                  <select name="" id="community_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
-                    <option value="Any">Any</option>
-                    <option value="Collective (artist)">Collective (artist)</option>
-                    <option value="Collective (other)">Collective (other)</option>
-                    <option value="Community Center">Community Center</option>
-                    <option value="Community Group">Community Group</option>
-                    <option value="Individual (other)">Individual (other)</option>
-                    <option value="Social Service Org">Social Service Org</option>
-                  </select>
-                  <select name="" id="infrastructure_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
-                    <option value="Any">Any</option>
-                    <option value="Artists Housing">Artists Housing</option>
-                    <option value="Arts Service Org">Arts Service</option>
-                    <option value="Funder">Funder</option>
-                    <option value="Presenting Org">Presenting Org</option>
-                    <option value="Residency">Residency</option>
-                  </select>
-              </fieldset>
-  
-            <fieldset>
-              <legend>Organization Size</legend>
-              <select name="" id="org_size" class="js-selectFilter" data-column="org_size">
-                <option value="Any">Any </option>
-                <option value="Small">Small</option>
-                <option value="Medium">Medium</option>
-                <option value="Large">Large</option>
-              </select>
-            </fieldset>
+	<div class="map-controller">
+			<div id="legend" class="box">
+					<header class="box-tab invert-theme">
+						- KEY
+					</header>
+					<div class="legend-row">
+						<a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Tooltip on top</a>
+						<h3 class="box-label">DISCIPLINE</h3>
+						<div class="icon-set"></div>
+					</div>
+					<div class="legend-row">
+						<h3 class="box-label">SIZE</h3>
+						<div class="icon-set"></div>
+					</div>
+					<div class="legend-row">
+						<h3 class="box-label">TYPE</h3>
+						<div class="icon-set"></div>
+					</div>
+					<div class="legend-row">
+						<h3 class="box-label">FUNDING STRUCTURE</h3>
+						<div class="icon-set"></div>
+					</div>
+			</div>
 
-            <fieldset>
-              <legend>Arts Activities</legend>
-              <select name="" id="art_activities" class="js-selectFilter" data-column="art_activities">
-                <option value="Any">Any </option>
-                <option value="Book Reading/Signing">Book Reading/Signing</option>
-                <option value="Class">Class</option>
-                <option value="Conference">Conference</option>
-                <option value="Exhibit">Exhibit</option>
-                <option value="Fair">Fair</option>
-                <option value="Festival">Festival</option>
-                <option value="Lecture">Lecture</option>
-                <option value="Meeting">Meeting</option>
-                <option value="Panel Discussion">Panel Discussion</option>
-                <option value="Performance">Performance</option>
-                <option value="Creative Production">Creative Production</option>
-                <option value="Screening">Screening</option>
-                <option value="Workshop">Workshop</option>
-                <option value="Young Artists">Young Artists</option>
-                <option value="Other Event">Other Event</option></select>
-            </fieldset>
+			<div class="filters box">
+					<header class="box-tab invert-theme">- FILTERS</header>
+					<form>
+							<fieldset>
+									<legend>Discipline</legend>           
+									<label class="checkbox inline">
+											<input type="checkbox" id="dance" value="Dance"> Dance
+									</label>
+									<label class="checkbox inline">
+											<input type="checkbox" id="film" value="Film"> Film
+									</label>
+									<label class="checkbox inline">
+											<input type="checkbox" id="literary" value="Literary"> Literary
+									</label>
+									<label class="checkbox inline">
+											<input type="checkbox" id="music" value="Music"> Music
+									</label>
+									<label class="checkbox inline">
+											<input type="checkbox" id="theater" value="Theater"> Theater
+									</label>
+									<label class="checkbox inline">
+											<input type="checkbox" id="visual" value="Visual"> Visual
+									</label>
+							</fieldset>
 
-            <fieldset>
-              <legend>Line Info</legend>
-              <label for="rail_lines">Rail Line:</label>
-                  <select name="" id="rail-lines" class="js-metroSelectFilter" data-column="metro_line">
-                      <option value="Any">All Lines</option>
-                      <option value="BlueLine" data-target="blueLineStops" data-mblayer="blueLine">Blue Line</option>
-                      <option value="ExpoLine" data-target="expoLineStops" data-mblayer="expoLine">Expo Line</option>
-                      <option value="GoldLine" data-target="goldLineStops" data-mblayer="goldLine">Gold Line</option>
-                      <option value="GreenLine" data-target="greenLineStops" data-mblayer="greenLine">Green Line</option>
-                      <option value="RedLine" data-target="redLineStops" data-mblayer="redLine">Red/Purple Line</option>
-                  </select>
-                  <select name="" id="blueLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="BlueLine">
-                    <option value="Any">All Stops</option>
-                    <option value="Pacific">Pacific</option>
-                    <option value="Long Beach Transit Mall">Long Beach Transit Mall</option>
-                    <option value="1st Street">1st Street</option>
-                    <option value="5th Street">5th Street</option>
-                    <option value="Anaheim">Anaheim</option>
-                    <option value="PCH">PCH</option>
-                    <option value="Willow">Willow</option>
-                    <option value="Wardlow">Wardlow</option>
-                    <option value="Del Amo">Del Amo</option>
-                    <option value="Artesia">Artesia</option>
-                    <option value="Compton">Compton</option>
-                    <option value="Willowbrook (Rosa Parks)">Willowbrook (Rosa Parks)</option>
-                    <option value="103rd Street / Watts Towers">103rd Street / Watts Towers</option>
-                    <option value="Firestone">Firestone</option>
-                    <option value="Florence">Florence</option>
-                    <option value="Slauson">Slauson</option>
-                    <option value="Vernon">Vernon</option>
-                    <option value="Washington">Washington</option>
-                    <option value="San Pedro">San Pedro</option>
-                    <option value="Pico">Pico</option>
-                    <option value="Metro Center">Metro Center</option>
-                    <option value="Grand">Grand</option>
-                  </select>
-                  <select id="expoLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="ExpoLine">
-                    <option value="Any">All Stops</option>
-                    <option value="23rd St">23rd St</option>
-                    <option value="Expo / Crenshaw">Expo / Crenshaw</option>
-                    <option value="Farmdale">Farmdale</option>
-                    <option value="Jefferson / USC">Jefferson / USC</option>
-                    <option value="Expo / La Brea">Expo / La Brea</option>
-                    <option value="La Cienega / Jefferson">La Cienega / Jefferson</option>
-                    <option value="Expo Park / USC">Expo Park / USC</option>
-                    <option value="Expo / Vermont">Expo / Vermont</option>
-                    <option value="Expo / Western">Expo / Western</option>
-                    <option value="Culver City">Culver City</option>
-                    <option value="Pico">Pico</option>
-                    <option value="Metro Center">Metro Center</option>
-                  </select>
+							<fieldset>
+								<legend>Organization Type</legend>
+									<select name="" id="org_type" class="js-selectFilter chosen-select" data-column="org_type" data-placeholder="Organization Type">
+											<option value="Any">Any</option>
+											<option value="Presenting" data-target="presenting_orgs">Presenting</option>
+											<option value="Educational" data-target="educational_orgs">Educational</option>
+											<option value="Community" data-target="community_orgs">Community</option>
+											<option value="Infrastructure" data-target="infrastructure_orgs">Infrastructure</option>
+											<option value="Multi">Multi</option>
+									</select>
+									<select name="" id="presenting_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+										<option value="Any">Any</option>
+										<option value="Bookstores">Bookstores</option>
+										<option value="Church">Church</option>
+										<option value="Cinema/Film Venue">Cinema/Film Venue</option>
+										<option value="Commercial Gallery">Commercial Gallery</option>
+										<option value="Individual (artist)">Individual (artist)</option>
+										<option value="Museum">Museum</option>
+										<option value="NFP Gallery">NFP Gallery</option>
+										<option value="Publication">Publication</option>
+									</select>
+									<select name="" id="educational_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+										<option value="Any">Any</option>
+										<option value="Arts Ed">Arts Education</option>
+										<option value="Library">Library</option>
+										<option value="Studio Facility/Classes">Studio Facility/Classes</option>
+									</select>
+									<select name="" id="community_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+										<option value="Any">Any</option>
+										<option value="Collective (artist)">Collective (artist)</option>
+										<option value="Collective (other)">Collective (other)</option>
+										<option value="Community Center">Community Center</option>
+										<option value="Community Group">Community Group</option>
+										<option value="Individual (other)">Individual (other)</option>
+										<option value="Social Service Org">Social Service Org</option>
+									</select>
+									<select name="" id="infrastructure_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+										<option value="Any">Any</option>
+										<option value="Artists Housing">Artists Housing</option>
+										<option value="Arts Service Org">Arts Service</option>
+										<option value="Funder">Funder</option>
+										<option value="Presenting Org">Presenting Org</option>
+										<option value="Residency">Residency</option>
+									</select>
+							</fieldset>
 
-                  <select id="goldLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="GoldLine">
-                    <option value="Any">All Stops</option>
-                    <option value="Sierra Madre Villa">Sierra Madre Villa</option>
-                    <option value="Allen">Allen</option>
-                    <option value="Lake">Lake</option>
-                    <option value="Memorial Park">Memorial Park</option>
-                    <option value="Del Mar">Del Mar</option>
-                    <option value="Fillmore">Fillmore</option>
-                    <option value="South Pasadena">South Pasadena</option>
-                    <option value="Highland Park">Highland Park</option>
-                    <option value="Southwest Museum">Southwest Museum</option>
-                    <option value="Heritage Square / Arroyo">Heritage Square / Arroyo</option>
-                    <option value="Lincoln Heights / Cypress Park">Lincoln Heights / Cypress Park</option>
-                    <option value="Chinatown">Chinatown</option>
-                    <option value="Union Station">Union Station</option>
-                    <option value="Little Tokyo / Arts District">Little Tokyo / Arts District</option>
-                    <option value="Pico / Aliso">Pico / Aliso</option>
-                    <option value="Mariachi Plaza / Boyle Heights">Mariachi Plaza / Boyle Heights</option>
-                    <option value="Soto">Soto</option>
-                    <option value="Indiana">Indiana</option>
-                    <option value="Maravilla">Maravilla</option>
-                    <option value="East LA Civic Center">East LA Civic Center</option>
-                    <option value="Atlantic">Atlantic</option>
+						<fieldset>
+							<legend>Organization Size</legend>
+							<select name="" id="org_size" class="js-selectFilter" data-column="org_size">
+								<option value="Any">Any </option>
+								<option value="Small">Small</option>
+								<option value="Medium">Medium</option>
+								<option value="Large">Large</option>
+							</select>
+						</fieldset>
 
-                  </select>
-                  <select id="greenLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="GreenLine">
-                    <option value="Any">All Stops</option>
-                    <option value="Norwalk">Norwalk</option>
-                    <option value="Lakewood">Lakewood</option>
-                    <option value="Long Beach">Long Beach</option>
-                    <option value="Willowbrook (Rosa Parks)">Willowbrook (Rosa Parks)</option>
-                    <option value="Avalon">Avalon</option>
-                    <option value="Harbor Freeway">Harbor Freeway</option>
-                    <option value="Vermont / Athens">Vermont / Athens</option>
-                    <option value="Crenshaw">Crenshaw</option>
-                    <option value="Hawthorne / Lennox">Hawthorne / Lennox</option>
-                    <option value="Aviation / LAX">Aviation / LAX</option>
-                    <option value="Mariposa">Mariposa</option>
-                    <option value="El Segundo">El Segundo</option>
-                    <option value="Douglas">Douglas</option>
-                    <option value="Redondo Beach">Redondo Beach</option>
-                  </select>
-                  <select id="redLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="RedPurpleLine">
-                    <option value="Any">All Stops</option>
-                    <option value="Union Station">Union Station</option>
-                    <option value="Civic Center">Civic Center</option>
-                    <option value="Pershing Square">Pershing Square</option>
-                    <option value="7th Street / Metro Center">7th Street / Metro Center</option>
-                    <option value="Westlake / McArthur Park">Westlake / McArthur Park</option>
-                    <option value="Wilshire / Vermont">Wilshire / Vermont</option>
-                    <option value="Vermont / Beverly">Vermont / Beverly</option>
-                    <option value="Vermont / Santa Monica">Vermont / Santa Monica</option>
-                    <option value="Vermont / Sunset">Vermont / Sunset</option>
-                    <option value="Hollywood / Western">Hollywood / Western</option>
-                    <option value="Hollywood / Vine">Hollywood / Vine</option>
-                    <option value="Hollywood / Highland">Hollywood / Highland</option>
-                    <option value="Universal City">Universal City</option>
-                    <option value="North Hollywood">North Hollywood</option>
-                    <option value="Wilshire / Normandie">Wilshire / Normandie</option>
-                    <option value="Wilshire / Western">Wilshire / Western</option>
-                  </select>
-              <p>-or-</p>
-              <label for="community">Community</label>
-                  <select name="" id="community">
-                    <option value="All">All</option>
-                    <option value="List of Communities">List of Communities</option>
-                  </select>
-              </fieldset>
-          </form>
-        </div>
-        <div id="messages" class="lead">This is where messages should appear</div>
-    </div>
+						<fieldset>
+							<legend>Arts Activities</legend>
+							<select name="" id="art_activities" class="js-selectFilter" data-column="art_activities">
+								<option value="Any">Any </option>
+								<option value="Book Reading/Signing">Book Reading/Signing</option>
+								<option value="Class">Class</option>
+								<option value="Conference">Conference</option>
+								<option value="Exhibit">Exhibit</option>
+								<option value="Fair">Fair</option>
+								<option value="Festival">Festival</option>
+								<option value="Lecture">Lecture</option>
+								<option value="Meeting">Meeting</option>
+								<option value="Panel Discussion">Panel Discussion</option>
+								<option value="Performance">Performance</option>
+								<option value="Creative Production">Creative Production</option>
+								<option value="Screening">Screening</option>
+								<option value="Workshop">Workshop</option>
+								<option value="Young Artists">Young Artists</option>
+								<option value="Other Event">Other Event</option></select>
+						</fieldset>
 
-    <div class='map-container span9'>
-      <div id='map'></div>
-    </div>
-  </div>
+						<fieldset>
+							<legend>Line Info</legend>
+							<label for="rail_lines">Rail Line:</label>
+									<select name="" id="rail-lines" class="js-metroSelectFilter" data-column="metro_line">
+											<option value="Any">All Lines</option>
+											<option value="BlueLine" data-target="blueLineStops" data-mblayer="blueLine">Blue Line</option>
+											<option value="ExpoLine" data-target="expoLineStops" data-mblayer="expoLine">Expo Line</option>
+											<option value="GoldLine" data-target="goldLineStops" data-mblayer="goldLine">Gold Line</option>
+											<option value="GreenLine" data-target="greenLineStops" data-mblayer="greenLine">Green Line</option>
+											<option value="RedLine" data-target="redLineStops" data-mblayer="redLine">Red/Purple Line</option>
+									</select>
+									<select name="" id="blueLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="BlueLine">
+										<option value="Any">All Stops</option>
+										<option value="Pacific">Pacific</option>
+										<option value="Long Beach Transit Mall">Long Beach Transit Mall</option>
+										<option value="1st Street">1st Street</option>
+										<option value="5th Street">5th Street</option>
+										<option value="Anaheim">Anaheim</option>
+										<option value="PCH">PCH</option>
+										<option value="Willow">Willow</option>
+										<option value="Wardlow">Wardlow</option>
+										<option value="Del Amo">Del Amo</option>
+										<option value="Artesia">Artesia</option>
+										<option value="Compton">Compton</option>
+										<option value="Willowbrook (Rosa Parks)">Willowbrook (Rosa Parks)</option>
+										<option value="103rd Street / Watts Towers">103rd Street / Watts Towers</option>
+										<option value="Firestone">Firestone</option>
+										<option value="Florence">Florence</option>
+										<option value="Slauson">Slauson</option>
+										<option value="Vernon">Vernon</option>
+										<option value="Washington">Washington</option>
+										<option value="San Pedro">San Pedro</option>
+										<option value="Pico">Pico</option>
+										<option value="Metro Center">Metro Center</option>
+										<option value="Grand">Grand</option>
+									</select>
+									<select id="expoLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="ExpoLine">
+										<option value="Any">All Stops</option>
+										<option value="23rd St">23rd St</option>
+										<option value="Expo / Crenshaw">Expo / Crenshaw</option>
+										<option value="Farmdale">Farmdale</option>
+										<option value="Jefferson / USC">Jefferson / USC</option>
+										<option value="Expo / La Brea">Expo / La Brea</option>
+										<option value="La Cienega / Jefferson">La Cienega / Jefferson</option>
+										<option value="Expo Park / USC">Expo Park / USC</option>
+										<option value="Expo / Vermont">Expo / Vermont</option>
+										<option value="Expo / Western">Expo / Western</option>
+										<option value="Culver City">Culver City</option>
+										<option value="Pico">Pico</option>
+										<option value="Metro Center">Metro Center</option>
+									</select>
+
+									<select id="goldLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="GoldLine">
+										<option value="Any">All Stops</option>
+										<option value="Sierra Madre Villa">Sierra Madre Villa</option>
+										<option value="Allen">Allen</option>
+										<option value="Lake">Lake</option>
+										<option value="Memorial Park">Memorial Park</option>
+										<option value="Del Mar">Del Mar</option>
+										<option value="Fillmore">Fillmore</option>
+										<option value="South Pasadena">South Pasadena</option>
+										<option value="Highland Park">Highland Park</option>
+										<option value="Southwest Museum">Southwest Museum</option>
+										<option value="Heritage Square / Arroyo">Heritage Square / Arroyo</option>
+										<option value="Lincoln Heights / Cypress Park">Lincoln Heights / Cypress Park</option>
+										<option value="Chinatown">Chinatown</option>
+										<option value="Union Station">Union Station</option>
+										<option value="Little Tokyo / Arts District">Little Tokyo / Arts District</option>
+										<option value="Pico / Aliso">Pico / Aliso</option>
+										<option value="Mariachi Plaza / Boyle Heights">Mariachi Plaza / Boyle Heights</option>
+										<option value="Soto">Soto</option>
+										<option value="Indiana">Indiana</option>
+										<option value="Maravilla">Maravilla</option>
+										<option value="East LA Civic Center">East LA Civic Center</option>
+										<option value="Atlantic">Atlantic</option>
+
+									</select>
+									<select id="greenLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="GreenLine">
+										<option value="Any">All Stops</option>
+										<option value="Norwalk">Norwalk</option>
+										<option value="Lakewood">Lakewood</option>
+										<option value="Long Beach">Long Beach</option>
+										<option value="Willowbrook (Rosa Parks)">Willowbrook (Rosa Parks)</option>
+										<option value="Avalon">Avalon</option>
+										<option value="Harbor Freeway">Harbor Freeway</option>
+										<option value="Vermont / Athens">Vermont / Athens</option>
+										<option value="Crenshaw">Crenshaw</option>
+										<option value="Hawthorne / Lennox">Hawthorne / Lennox</option>
+										<option value="Aviation / LAX">Aviation / LAX</option>
+										<option value="Mariposa">Mariposa</option>
+										<option value="El Segundo">El Segundo</option>
+										<option value="Douglas">Douglas</option>
+										<option value="Redondo Beach">Redondo Beach</option>
+									</select>
+									<select id="redLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="RedPurpleLine">
+										<option value="Any">All Stops</option>
+										<option value="Union Station">Union Station</option>
+										<option value="Civic Center">Civic Center</option>
+										<option value="Pershing Square">Pershing Square</option>
+										<option value="7th Street / Metro Center">7th Street / Metro Center</option>
+										<option value="Westlake / McArthur Park">Westlake / McArthur Park</option>
+										<option value="Wilshire / Vermont">Wilshire / Vermont</option>
+										<option value="Vermont / Beverly">Vermont / Beverly</option>
+										<option value="Vermont / Santa Monica">Vermont / Santa Monica</option>
+										<option value="Vermont / Sunset">Vermont / Sunset</option>
+										<option value="Hollywood / Western">Hollywood / Western</option>
+										<option value="Hollywood / Vine">Hollywood / Vine</option>
+										<option value="Hollywood / Highland">Hollywood / Highland</option>
+										<option value="Universal City">Universal City</option>
+										<option value="North Hollywood">North Hollywood</option>
+										<option value="Wilshire / Normandie">Wilshire / Normandie</option>
+										<option value="Wilshire / Western">Wilshire / Western</option>
+									</select>
+							<p>-or-</p>
+							<label for="community">Community</label>
+									<select name="" id="community">
+										<option value="All">All</option>
+										<option value="List of Communities">List of Communities</option>
+									</select>
+							</fieldset>
+					</form>
+			</div>
+			<div id="messages" class="lead">This is where messages should appear</div>
+	</div>
+
+	<div class='map-container'>
+		<div id='map'></div>
+	</div>
 </div>
 <script src="jam/require.js"></script>
 <script src='app.js'></script>

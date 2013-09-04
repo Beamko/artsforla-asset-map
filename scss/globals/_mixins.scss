@@ -1,0 +1,30 @@
+$prefixes: ("-webkit", "-moz", "-ms", "-o",  "");
+
+@mixin prefixer ($property, $value) {
+	@each $prefix in $prefixes {
+		#{$prefix}-#{$property} : $value;
+		} 
+	}
+
+@mixin transition($transition...) {
+	// defining prefixes so we can use them in mixins below
+	@each $prefix in $prefixes {
+		#{$prefix}-transition: $transition;
+	}
+	transition : $transition;
+}
+
+@mixin transform($property: none) {
+	@include prefixer(transform, $property);
+	transform : $property;
+}
+@mixin transform-origin($axes: 50%) {
+// x-axis - left | center | right  | length | %
+// y-axis - top  | center | bottom | length | %
+// z-axis -                          length
+	@include prefixer(transform-origin, $axes);
+}
+
+@mixin transform-style ($style: flat) {
+		@include prefixer(transform-style, $style);
+}

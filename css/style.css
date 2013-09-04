@@ -1,3 +1,5 @@
+/********************* NORMALIZE 
+*********************/
 /* ========================================================================== Normalize.scss settings ========================================================================== */
 /** Includes legacy browser support IE6/7  Set to false if you want to drop support for IE6 and IE7 */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -117,18 +119,108 @@ textarea { overflow: auto; /* 1 */ vertical-align: top; /* 2 */ }
 /** Remove most spacing between table cells. */
 table { border-collapse: collapse; border-spacing: 0; }
 
+/* ========================================================================== Base ========================================================================== */
+/** A thin layer on top of normalize.css that provides a starting point more suitable for web applications. Removes the default spacing and border for appropriate elements. */
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, p, pre { margin: 0; }
+
+fieldset { border: 0; margin: 0; padding: 0; }
+
+iframe { border: 0; }
+
+ol, ul { margin: 0; list-style: none; padding: 0; }
+
+/** Suppress the focus outline on links that cannot be accessed via keyboard. This prevents an unwanted focus outline from appearing around elements that might still respond to pointer events. */
+[tabindex="-1"] { outline: none; }
+
+/********************* VENDOR 
+*********************/
+/********************* GLOBAL SETTINGS 
+*********************/
+/********************* COLORS 
+*********************/
+/********************* DIMENSION 
+*********************/
+/********************* PARTIALS
+*********************/
+/*box tabs top adjustments*/
+/********************* COMPONENTS 
+*********************/
+/*WARNING box-sizing affects carto-db infowindows*/
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+#map { display: block !important; position: absolute; top: 0; bottom: 0; width: 100%; height: 100%; }
+
+.top-menu { display: block !important; width: 100% !important; }
+
+.map-controller, .map-container { display: block !important; height: 100%; }
+
+.flex-image { max-width: 100%; height: auto; vertical-align: top; }
+
+.clearfix, .row div { zoom: 1; }
+.clearfix:before, .row div:before, .clearfix:after, .row div:after { content: ""; display: table; }
+.clearfix:after, .row div:after { clear: both; }
+
+.pull-left, .row div { float: left; }
+
+.pull-right { float: right; }
+
+.top-menu, .box { position: relative; z-index: 99; }
+
 /********************* SUIT 
 *********************/
 .u-isHiddenVisually { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); }
 
-html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
+/********************* THEMES 
+*********************/
+.top-menu, .box { color: #ee483d; background-color: white; }
+.top-menu .invert-theme, .box .invert-theme { color: white; background-color: #ee483d; }
 
-.map-controller { height: 100%; }
+/********************* PARTIALS 
+*********************/
+/********************* MENU 
+*********************/
+.top-menu { height: 5em; }
 
-.map-container { height: 100%; }
+.logo { width: 16em; margin-left: 1.5em; padding-top: 0.75em; }
 
-#map { position: absolute; top: 0; bottom: 0; width: 100%; text-align: center; }
+/********************* MAP CONTROLS
+*********************/
+.map-controller { width: 25em; background: transparent; }
 
-.full-height { height: 100%; }
+.box { margin: 1.5em; margin-left: 3.5em; padding: 0.5em; }
 
+.box-tab { -webkit-transform-origin: 0 bottom; -moz-transform-origin: 0 bottom; -ms-transform-origin: 0 bottom; -o-transform-origin: 0 bottom; -transform-origin: 0 bottom; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); -o-transform: rotate(-90deg); -transform: rotate(-90deg); transform: rotate(-90deg); display: inline-block; position: absolute; top: 0; left: 0; padding: 0.5em; }
+
+#legend .box-tab { top: 23px; }
+
+.filters .box-tab { top: 57px; }
+
+/********************* MAP 
+*********************/
 #messages { position: absolute; bottom: 0; left: 10px; width: 35%; height: auto; }
+
+.tooltip { position: absolute; z-index: 1030; display: block; visibility: visible; font-size: 11px; line-height: 1.4; opacity: 0; filter: alpha(opacity=0); }
+
+.tooltip.in { opacity: 0.8; filter: alpha(opacity=80); }
+
+.tooltip.top { margin-top: -3px; padding: 5px 0; }
+
+.tooltip.right { margin-left: 3px; padding: 0 5px; }
+
+.tooltip.bottom { margin-top: 3px; padding: 5px 0; }
+
+.tooltip.left { margin-left: -3px; padding: 0 5px; }
+
+.tooltip-inner { max-width: 200px; padding: 8px; color: #ffffff; text-align: center; text-decoration: none; background-color: #ee483d; }
+
+.tooltip-arrow { position: absolute; width: 0; height: 0; border-color: transparent; border-style: solid; }
+
+.tooltip.top .tooltip-arrow { bottom: 0; left: 50%; margin-left: -5px; border-width: 5px 5px 0; border-top-color: #ee483d; }
+
+.tooltip.right .tooltip-arrow { top: 50%; left: 0; margin-top: -5px; border-width: 5px 5px 5px 0; border-right-color: #000000; }
+
+.tooltip.left .tooltip-arrow { top: 50%; right: 0; margin-top: -5px; border-width: 5px 0 5px 5px; border-left-color: #000000; }
+
+.tooltip.bottom .tooltip-arrow { top: 0; left: 50%; margin-left: -5px; border-width: 0 5px 5px; border-bottom-color: #000000; }

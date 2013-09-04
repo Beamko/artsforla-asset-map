@@ -1,4 +1,4 @@
-require(['lodash','geojson/blueLine','geojson/expoLine','geojson/goldLine','geojson/greenLine','geojson/redLine'], function (_,BlueLine,ExpoLine,GoldLine,GreenLine,RedLine) {
+require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojson/expoLine','geojson/goldLine','geojson/greenLine','geojson/redLine'], function (_,$,BlueLine,ExpoLine,GoldLine,GreenLine,RedLine) {
 
 var $messages = $('#messages'),
 	$disciplines = $('.checkbox input'),
@@ -17,7 +17,7 @@ function serialize(filters, layer) {
 
 	/*add filter properties to query string*/
 	if ( Object.keys(filters).length ) {
-		for (key in filters) {
+		for (var key in filters) {
 			searchTerms.push(filters[key]);
 		}
 	}
@@ -44,7 +44,7 @@ function createSelector(layer) {
 		var searchString = "";
 		
 		if ( e.currentTarget.checked ) {
-			searchTerms.push(e.currentTarget.value) 
+			searchTerms.push(e.currentTarget.value);
 		} else {
 			var index = searchTerms.indexOf(e.currentTarget.value); 
 			searchTerms.splice(index,1);
@@ -67,11 +67,10 @@ function createSelector(layer) {
 
 	/*standard select filter from cartoDB*/
 	$('.js-selectFilter').change(function(e) {
-
+		$(this).siblings('.js-childFilter').addClass('u-isHiddenVisually');
 		/*show child-filter, if any*/		
 		var filter = $("option:selected",this)[0].dataset;
-	    	'target' in filter ? $('#' + filter.target).removeClass('u-isHiddenVisually') : 
-	    		$(this).siblings('.js-childFilter').addClass('u-isHiddenVisually');
+	  	'target' in filter ? $('#' + filter.target).removeClass('u-isHiddenVisually') : $(this).siblings('.js-childFilter').addClass('u-isHiddenVisually');
 
 	    	/*generate query*/  	
 	    	var queryColumn = this.dataset.column;
@@ -160,5 +159,20 @@ markerLayer.addTo(map)
 			layer.setInteraction(true);
 			createSelector(layer);
 	});
+
+/*********************
+ CONTROLLER FORM 
+*********************/
+$('.legend-row').tooltip({
+      selector: "a[data-toggle=tooltip]",
+      trigger : 'click'
+    });
+
+$('.chosen-select').chosen();
+
+
 });
+
+
+
 

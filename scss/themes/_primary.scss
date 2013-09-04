@@ -1,0 +1,12 @@
+%theme-primary {
+	@extend %arrange-front;
+
+	color : $red;
+	background-color : $white;
+
+	.invert-theme {
+		color : $white;
+		background-color : $red;
+	}
+	
+}
