@@ -19,51 +19,51 @@
 
 	<div class="map-controller">
 			<div id="legend" class="box">
-					<header class="box-tab invert-theme">
-						- KEY
-					</header>
-					<div class="legend-row">
-						<a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Tooltip on top</a>
-						<h3 class="box-label">DISCIPLINE</h3>
-						<div class="icon-set"></div>
-					</div>
-					<div class="legend-row">
-						<h3 class="box-label">SIZE</h3>
-						<div class="icon-set"></div>
-					</div>
-					<div class="legend-row">
-						<h3 class="box-label">TYPE</h3>
-						<div class="icon-set"></div>
-					</div>
-					<div class="legend-row">
-						<h3 class="box-label">FUNDING STRUCTURE</h3>
-						<div class="icon-set"></div>
-					</div>
+				<header class="box-tab invert-theme">
+					- KEY
+				</header>
+				<div class="legend-row">
+					<a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Tooltip on top</a>
+					<h3 class="box-label">DISCIPLINE</h3>
+					<div class="icon-set"></div>
+				</div>
+				<div class="legend-row">
+					<h3 class="box-label">SIZE</h3>
+					<div class="icon-set"></div>
+				</div>
+				<div class="legend-row">
+					<h3 class="box-label">TYPE</h3>
+					<div class="icon-set"></div>
+				</div>
+				<div class="legend-row">
+					<h3 class="box-label">FUNDING STRUCTURE</h3>
+					<div class="icon-set"></div>
+				</div>
 			</div>
 
 			<div class="filters box">
 					<header class="box-tab invert-theme">- FILTERS</header>
 					<form>
 							<fieldset>
-									<legend>Discipline</legend>           
-									<label class="checkbox inline">
-											<input type="checkbox" id="dance" value="Dance"> Dance
-									</label>
-									<label class="checkbox inline">
-											<input type="checkbox" id="film" value="Film"> Film
-									</label>
-									<label class="checkbox inline">
-											<input type="checkbox" id="literary" value="Literary"> Literary
-									</label>
-									<label class="checkbox inline">
-											<input type="checkbox" id="music" value="Music"> Music
-									</label>
-									<label class="checkbox inline">
-											<input type="checkbox" id="theater" value="Theater"> Theater
-									</label>
-									<label class="checkbox inline">
-											<input type="checkbox" id="visual" value="Visual"> Visual
-									</label>
+								<legend>Discipline</legend>           
+								<label class="checkbox inline">
+										<input type="checkbox" id="dance" value="Dance"> Dance
+								</label>
+								<label class="checkbox inline">
+										<input type="checkbox" id="film" value="Film"> Film
+								</label>
+								<label class="checkbox inline">
+										<input type="checkbox" id="literary" value="Literary"> Literary
+								</label>
+								<label class="checkbox inline">
+										<input type="checkbox" id="music" value="Music"> Music
+								</label>
+								<label class="checkbox inline">
+										<input type="checkbox" id="theater" value="Theater"> Theater
+								</label>
+								<label class="checkbox inline">
+										<input type="checkbox" id="visual" value="Visual"> Visual
+								</label>
 							</fieldset>
 
 							<fieldset>
@@ -147,12 +147,12 @@
 							<legend>Line Info</legend>
 							<label for="rail_lines">Rail Line:</label>
 									<select name="" id="rail-lines" class="js-metroSelectFilter" data-column="metro_line">
-											<option value="Any">All Lines</option>
-											<option value="BlueLine" data-target="blueLineStops" data-mblayer="blueLine">Blue Line</option>
-											<option value="ExpoLine" data-target="expoLineStops" data-mblayer="expoLine">Expo Line</option>
-											<option value="GoldLine" data-target="goldLineStops" data-mblayer="goldLine">Gold Line</option>
-											<option value="GreenLine" data-target="greenLineStops" data-mblayer="greenLine">Green Line</option>
-											<option value="RedLine" data-target="redLineStops" data-mblayer="redLine">Red/Purple Line</option>
+										<option value="Any">All Lines</option>
+										<option value="BlueLine" data-target="blueLineStops" data-mblayer="blueLine">Blue Line</option>
+										<option value="ExpoLine" data-target="expoLineStops" data-mblayer="expoLine">Expo Line</option>
+										<option value="GoldLine" data-target="goldLineStops" data-mblayer="goldLine">Gold Line</option>
+										<option value="GreenLine" data-target="greenLineStops" data-mblayer="greenLine">Green Line</option>
+										<option value="RedLine" data-target="redLineStops" data-mblayer="redLine">Red/Purple Line</option>
 									</select>
 									<select name="" id="blueLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="BlueLine">
 										<option value="Any">All Stops</option>
@@ -272,7 +272,40 @@
 		<div id='map'></div>
 	</div>
 </div>
+
+<!-- INFOWINDOW TEMPLATE -->
+<script type="infowindow/html" id="infowindow_afla">
+	<div class="cartodb-popup">
+	  <a href="#close" class="cartodb-popup-close-button close">x</a>
+	   <div class="cartodb-popup-content-wrapper">
+	     <div class="cartodb-popup-header">
+	        <h3>{{content.data.org_name}}</h3>
+	     </div>
+	     <div class="cartodb-popup-content">
+		     	<div>{{content.data.org_address}},{{content.data.city}} {{content.data.zip_code}}</div>
+			{{#content.data.disciplines}}
+				<div><h4>DISCIPLINES</h4>{{content.data.disciplines}}</div>
+			{{/content.data.disciplines}}
+
+			{{#content.data.org_type}}
+				<div><h4>ORGANIZATION TYPE</h4>{{content.data.org_type}}</div>
+			{{/content.data.org_type}}
+
+			{{#content.data.art_activities}}
+				<div><h4>ACTIVITIES</h4>{{content.data.art_activities}}</div>
+			{{/content.data.art_activities}}
+			{{#content.data.events_per_month}}
+				<div>{{content.data.events_per_month}}</div>
+			{{/content.data.events_per_month}}
+	     </div>
+	   </div>
+	   <div class="cartodb-popup-tip-container"></div>
+	</div>
+</script>
+
+<!-- SCRIPT INIT -->
 <script src="jam/require.js"></script>
 <script src='app.js'></script>
+
 </body>
 </html>

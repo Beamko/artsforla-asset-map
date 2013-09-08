@@ -6,7 +6,7 @@ var $messages = $('#messages'),
 	//tableName = "cultural_asset_list",
 	//cartoViz = "http://cs-chris.cartodb.com/api/v2/viz/7aaa7842-eb50-11e2-ab8e-61f262e10947/viz.json",
 	tableName = "lan_data_set",
-	cartoViz = "http://cs-chris.cartodb.com/api/v2/viz/1c721cc6-0545-11e3-8ab0-796eb9e49271/viz.json",
+	cartoViz = "http://cs-chris.cartodb.com/api/v2/viz/ab1e8ce0-18c1-11e3-9831-5532403f69e3/viz.json",
 	filters = {},
 	selectedLine = "",
 	self=this;
@@ -137,7 +137,7 @@ function createSelector(layer) {
 
 }
 
-// /*instantiate map and add  base layers*/
+/*instantiate map and add  base layers*/
  var map = new L.Map('map', {
 	center: [34.056,-118.235],
 	zoom: 11
@@ -152,12 +152,14 @@ var railLines = L.tileLayer('http://a.tiles.mapbox.com/v3/civservchris.metroLine
 });
 railLines.addTo(map);
 
-// /*load cartoDB markers*/
+/*load cartoDB markers*/
 var markerLayer = cartodb.createLayer(map, cartoViz);
 markerLayer.addTo(map)
 	.on('done', function(layer) {
-			layer.setInteraction(true);
-			createSelector(layer);
+		var sublayer = layer.getSubLayer(0);
+		sublayer.infowindow.set('template', $('#infowindow_afla').html());
+		layer.setInteraction(true);
+		createSelector(layer);
 	});
 
 /*********************
