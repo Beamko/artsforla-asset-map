@@ -1,5 +1,6 @@
 %theme-primary {
 	@extend %arrange-front;
+	@extend %red-shadow;
 
 	color : $red;
 	background-color : $white;

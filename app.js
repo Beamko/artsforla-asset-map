@@ -140,8 +140,10 @@ function createSelector(layer) {
 /*instantiate map and add  base layers*/
  var map = new L.Map('map', {
 	center: [34.056,-118.235],
-	zoom: 11
+	zoom: 11,
+	zoomControl : false
 });
+new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 
 L.tileLayer('http://a.tiles.mapbox.com/v3/examples.map-zgrqqx0w/{z}/{x}/{y}.png', {
 	attribution: 'Mapbox'
@@ -158,9 +160,32 @@ markerLayer.addTo(map)
 	.on('done', function(layer) {
 		var sublayer = layer.getSubLayer(0);
 		sublayer.infowindow.set('template', $('#infowindow_afla').html());
-		layer.setInteraction(true);
+		sublayer.on('featureClick', function(e,p,l,data){
+			console.log(data);
+			$('.cartodb-infowindow').on("click", function(e){
+				console.log(e.target);
+				if ($(e.target).hasClass('flip-toggle') ) {
+					/*custom toggle code here*/
+					// var toggle = e.target,
+					// 	front = $('#flip-this')[0],
+					// 	back = $('#flip-back').html();
+					// console.log('front',front);
+					// console.log('back',back);
+					// flippant.flip(front,back,'card');
+				}
+			});
+		});
+		//layer.setInteraction(true);
 		createSelector(layer);
 	});
+
+function onMapClick(e) {
+    console.log(e);
+}
+
+map.on('click', onMapClick);
+
+
 
 /*********************
  CONTROLLER FORM 
@@ -172,9 +197,7 @@ $('.legend-row').tooltip({
 
 $('.chosen-select').chosen();
 
-
 });
-
 
 
 
