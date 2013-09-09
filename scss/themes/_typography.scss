@@ -1,0 +1,29 @@
+%atrament-web {
+	font-family: "atrament-web", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+}
+
+%tablet-gothic-condensed {
+	font-family : "tablet-gothic-condensed", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+/*Custom Mixin to adjust box-tab top*/
+@mixin set-font($font-name) {
+	@if $font-name == atrament-web {
+		@extend %atrament-web;
+		$key-tab-top : 8px;
+		$filters-tab-top : 30px;
+	}
+
+	@if $font-name == tablet-gothic-condensed {
+		@extend %tablet-gothic-condensed;
+		$key-tab-top : 5px;
+		$filters-tab-top : 28px;
+	}
+}

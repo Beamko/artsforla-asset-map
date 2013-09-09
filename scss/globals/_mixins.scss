@@ -1,3 +1,6 @@
+/*********************
+ GENERIC 
+*********************/
 $prefixes: ("-webkit", "-moz", "-ms", "-o",  "");
 
 @mixin prefixer ($property, $value) {
@@ -28,3 +31,7 @@ $prefixes: ("-webkit", "-moz", "-ms", "-o",  "");
 @mixin transform-style ($style: flat) {
 		@include prefixer(transform-style, $style);
 }
+
+/*********************
+ TYPOGRAPHY
+*********************/

@@ -140,9 +140,16 @@ ol, ul { margin: 0; list-style: none; padding: 0; }
 *********************/
 /********************* DIMENSION 
 *********************/
+/********************* TYPOGRAPHY 
+*********************/
+/*options: atrament-web || tablet-gothic-condensed*/
 /********************* PARTIALS
 *********************/
-/*box tabs top adjustments*/
+/*box tabs top defaults, varies per box-tab mixin*/
+/********************* GENERIC 
+*********************/
+/********************* TYPOGRAPHY
+*********************/
 /********************* COMPONENTS 
 *********************/
 /*WARNING box-sizing affects carto-db infowindows*/
@@ -178,6 +185,9 @@ html, body { height: 100%; }
 *********************/
 .top-menu, .box { box-shadow: 0px 8px 15px -5px #f48a83; }
 
+.top-menu, .box { font-family: "tablet-gothic-condensed", sans-serif; font-style: normal; font-weight: 400; text-transform: uppercase; }
+
+/*Custom Mixin to adjust box-tab top*/
 .top-menu, .box { color: #ee483d; background-color: white; }
 .top-menu .invert-theme, .box .invert-theme { color: white; background-color: #ee483d; }
 
@@ -197,9 +207,9 @@ html, body { height: 100%; }
 
 .box-tab { -webkit-transform-origin: 0 bottom; -moz-transform-origin: 0 bottom; -ms-transform-origin: 0 bottom; -o-transform-origin: 0 bottom; -transform-origin: 0 bottom; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); -o-transform: rotate(-90deg); -transform: rotate(-90deg); transform: rotate(-90deg); display: inline-block; position: absolute; top: 0; left: 0; padding: 0.5em; }
 
-#legend .box-tab { top: 23px; }
+#legend .box-tab { top: 5px; }
 
-.filters .box-tab { top: 57px; }
+.filters .box-tab { top: 28px; }
 
 /********************* MAP 
 *********************/
