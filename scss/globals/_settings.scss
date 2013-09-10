@@ -10,10 +10,13 @@ $tan-dark : #96947B;
 /*********************
  DIMENSION 
 *********************/
+$padding-XS: 0.25em;
 $padding-S: 0.5em;
 $padding-M : 0.75em;
 $padding-L : 1em;
 
+$margin-XXS : 0.25em;
+$margin-XS : 0.5em;
 $margin-S : 1em;
 $margin-M : 1.5em;
 $margin-L : 2em;
@@ -23,6 +26,7 @@ $margin-L : 2em;
 *********************/
 /*options: atrament-web || tablet-gothic-condensed*/
 $font-name : "tablet-gothic-condensed";
+$default-font-size : 1em;
 
 /*********************
  PARTIALS

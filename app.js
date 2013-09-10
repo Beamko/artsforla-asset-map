@@ -195,7 +195,7 @@ $('.legend-row').tooltip({
       trigger : 'click'
     });
 
-$('.chosen-select').chosen();
+$('.chosen').chosen({disable_search:true});
 
 });
 
