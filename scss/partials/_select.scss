@@ -34,6 +34,11 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png');
 		cursor: pointer;
 	}
 }
+
+.chosen-container.childFilter {
+	width: 95% !important;
+	margin-left : 5%;
+}
 /* @end */
 
 /* @group Single Chosen */

@@ -69,7 +69,7 @@
 							</fieldset>
 
 							<fieldset>
-								<legend><!-- <h3>Organization Type</h3> --></legend>
+								<legend><h3>Organization</h3></legend>
 									<select name="" id="org_type" class="js-selectFilter chosen" data-placeholder="ORGANIZATION TYPE" data-column="org_type" data-placeholder="Organization Type">
 											<option></option>
 											<option value="Any">Any</option>
@@ -79,7 +79,7 @@
 											<option value="Infrastructure" data-target="infrastructure_orgs">Infrastructure</option>
 											<option value="Multi">Multi</option>
 									</select>
-									<select name="" id="presenting_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+									<select name="" id="presenting_orgs" class="u-isHiddenVisually js-childFilter childFilter chosen presenting_orgs chosen" data-column="org_type">
 										<option value="Any">Any</option>
 										<option value="Bookstores">Bookstores</option>
 										<option value="Church">Church</option>
@@ -90,13 +90,13 @@
 										<option value="NFP Gallery">NFP Gallery</option>
 										<option value="Publication">Publication</option>
 									</select>
-									<select name="" id="educational_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+									<select name="" id="educational_orgs" class="u-isHiddenVisually js-childFilter childFilter educational_orgs chosen" data-column="org_type">
 										<option value="Any">Any</option>
 										<option value="Arts Ed">Arts Education</option>
 										<option value="Library">Library</option>
 										<option value="Studio Facility/Classes">Studio Facility/Classes</option>
 									</select>
-									<select name="" id="community_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+									<select name="" id="community_orgs" class="u-isHiddenVisually js-childFilter childFilter community_orgs chosen" data-column="org_type">
 										<option value="Any">Any</option>
 										<option value="Collective (artist)">Collective (artist)</option>
 										<option value="Collective (other)">Collective (other)</option>
@@ -105,7 +105,7 @@
 										<option value="Individual (other)">Individual (other)</option>
 										<option value="Social Service Org">Social Service Org</option>
 									</select>
-									<select name="" id="infrastructure_orgs" class="u-isHiddenVisually js-childFilter" data-column="org_type">
+									<select name="" id="infrastructure_orgs" class="u-isHiddenVisually js-childFilter childFilter infrastructure_orgs chosen" data-column="org_type">
 										<option value="Any">Any</option>
 										<option value="Artists Housing">Artists Housing</option>
 										<option value="Arts Service Org">Arts Service</option>
@@ -160,7 +160,7 @@
 									<option value="GreenLine" data-target="greenLineStops" data-mblayer="greenLine">Green Line</option>
 									<option value="RedLine" data-target="redLineStops" data-mblayer="redLine">Red/Purple Line</option>
 								</select>
-									<select name="" id="blueLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="BlueLine">
+									<select name="" id="blueLineStops" class="u-isHiddenVisually js-metroChildFilter childFilter blueLineStops chosen" data-column="metro_stop" data-line="BlueLine">
 										<option value="Any">All Stops</option>
 										<option value="Pacific">Pacific</option>
 										<option value="Long Beach Transit Mall">Long Beach Transit Mall</option>
@@ -185,7 +185,7 @@
 										<option value="Metro Center">Metro Center</option>
 										<option value="Grand">Grand</option>
 									</select>
-									<select id="expoLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="ExpoLine">
+									<select id="expoLineStops" class="u-isHiddenVisually js-metroChildFilter childFilter expoLineStops chosen" data-column="metro_stop" data-line="ExpoLine">
 										<option value="Any">All Stops</option>
 										<option value="23rd St">23rd St</option>
 										<option value="Expo / Crenshaw">Expo / Crenshaw</option>
@@ -201,7 +201,7 @@
 										<option value="Metro Center">Metro Center</option>
 									</select>
 
-									<select id="goldLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="GoldLine">
+									<select id="goldLineStops" class="u-isHiddenVisually js-metroChildFilter childFilter goldLineStops chosen" data-column="metro_stop" data-line="GoldLine">
 										<option value="Any">All Stops</option>
 										<option value="Sierra Madre Villa">Sierra Madre Villa</option>
 										<option value="Allen">Allen</option>
@@ -226,7 +226,7 @@
 										<option value="Atlantic">Atlantic</option>
 
 									</select>
-									<select id="greenLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="GreenLine">
+									<select id="greenLineStops" class="u-isHiddenVisually js-metroChildFilter childFilter greenLineStops chosen" data-column="metro_stop" data-line="GreenLine">
 										<option value="Any">All Stops</option>
 										<option value="Norwalk">Norwalk</option>
 										<option value="Lakewood">Lakewood</option>
@@ -243,7 +243,7 @@
 										<option value="Douglas">Douglas</option>
 										<option value="Redondo Beach">Redondo Beach</option>
 									</select>
-									<select id="redLineStops" class="u-isHiddenVisually js-metroChildFilter" data-column="metro_stop" data-line="RedPurpleLine">
+									<select id="redLineStops" class="u-isHiddenVisually js-metroChildFilter childFilter redLineStops chosen" data-column="metro_stop" data-line="RedPurpleLine">
 										<option value="Any">All Stops</option>
 										<option value="Union Station">Union Station</option>
 										<option value="Civic Center">Civic Center</option>

@@ -203,7 +203,7 @@ html, body { height: 100%; }
 *********************/
 .map-controller { width: 25em; background: transparent; }
 
-.box { margin: 1.5em; margin-left: 3.5em; padding: 0.5em; }
+.box { margin: 1.5em; margin-left: 3.5em; padding: 1em; }
 
 .box-tab { -webkit-transform-origin: 0 bottom; -moz-transform-origin: 0 bottom; -ms-transform-origin: 0 bottom; -o-transform-origin: 0 bottom; -transform-origin: 0 bottom; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); -o-transform: rotate(-90deg); -transform: rotate(-90deg); transform: rotate(-90deg); display: inline-block; position: absolute; top: 0; left: 0; padding: 0.5em; }
 
@@ -246,6 +246,8 @@ html, body { height: 100%; }
 .chosen-container .chosen-drop { position: absolute; top: 100%; left: -9999px; z-index: 1010; width: 100%; border: 1px solid #aaa; border-top: 0; background: #fff; }
 .chosen-container.chosen-with-drop .chosen-drop { left: 0; }
 .chosen-container a { cursor: pointer; }
+
+.chosen-container.childFilter { width: 95% !important; margin-left: 5%; }
 
 /* @end */
 /* @group Single Chosen */
