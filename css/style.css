@@ -276,6 +276,10 @@ html, body { height: 100%; }
 .chosen-container .chosen-results li em { font-style: normal; text-decoration: underline; }
 
 /* @end */
+.checkbox-container { margin-top: 0.5em; }
+
+.checkbox { width: 50%; }
+
 .cartodb-popup-content-wrapper { box-sizing: content-box !important; }
 
 /********************* FROM CARTO DB 
