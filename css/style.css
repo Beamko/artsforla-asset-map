@@ -138,8 +138,10 @@ ol, ul { margin: 0; list-style: none; padding: 0; }
 *********************/
 /********************* COLORS 
 *********************/
+/*Legend*/
 /********************* DIMENSION 
 *********************/
+/*legend*/
 /********************* TYPOGRAPHY 
 *********************/
 /*options: atrament-web || tablet-gothic-condensed*/
@@ -165,14 +167,22 @@ html, body { height: 100%; }
 
 .flex-image { max-width: 100%; height: auto; vertical-align: top; }
 
-.clearfix, .row div { zoom: 1; }
-.clearfix:before, .row div:before, .clearfix:after, .row div:after { content: ""; display: table; }
-.clearfix:after, .row div:after { clear: both; }
+/********************* GRID GLOBALS 
+*********************/
+.clearfix, .row, .row div { zoom: 1; }
+.clearfix:before, .row:before, .row div:before, .clearfix:after, .row:after, .row div:after { content: ""; display: table; }
+.clearfix:after, .row:after, .row div:after { clear: both; }
 
 .pull-left, .row div { float: left; }
 
 .pull-right { float: right; }
 
+.first { margin-left: 0 !important; }
+
+.last { margin-right: 0 !important; }
+
+/********************* 3D 
+*********************/
 .top-menu, .box { position: relative; z-index: 99; }
 
 .u-isHidden { display: none !important; visibility: hidden !important; }
@@ -184,6 +194,12 @@ html, body { height: 100%; }
 /********************* SHADOW 
 *********************/
 .top-menu, .box { box-shadow: 0px 8px 15px -5px #f48a83; }
+
+/********************* LEGEND 7-COLUMN GRID 
+*********************/
+.discipline-icon, .funding-icon, .size-icon, .type-icon { margin-left: 4%; padding: 0 0%; }
+
+.discipline-icon, .funding-icon, .tiny-org { width: 10.57143%; }
 
 .top-menu, .box { font-family: "tablet-gothic-condensed", sans-serif; font-style: normal; font-weight: 400; text-transform: uppercase; }
 
@@ -201,7 +217,7 @@ html, body { height: 100%; }
 
 /********************* MAP CONTROLS
 *********************/
-.map-controller { width: 25em; background: transparent; }
+.map-controller { width: 24em; background: transparent; }
 
 .box { margin: 1.5em; margin-left: 3.5em; padding: 1em; }
 
@@ -215,29 +231,52 @@ html, body { height: 100%; }
 *********************/
 #messages { position: absolute; bottom: 0; left: 10px; width: 35%; height: auto; }
 
-.tooltip { position: absolute; z-index: 1030; display: block; visibility: visible; font-size: 11px; line-height: 1.4; opacity: 0; filter: alpha(opacity=0); }
+.checkbox-container { margin-top: 0.5em; }
 
-.tooltip.in { opacity: 0.8; filter: alpha(opacity=80); }
+.checkbox { width: 50%; }
 
-.tooltip.top { margin-top: -3px; padding: 5px 0; }
+.cartodb-popup-content-wrapper { box-sizing: content-box !important; }
 
-.tooltip.right { margin-left: 3px; padding: 0 5px; }
+/********************* FROM CARTO DB 
+*********************/
+/** CartoDB2.0 popup styles (DEFAULT) */
+.icon-set { margin: 0.25em 0 0.25em 0; }
 
-.tooltip.bottom { margin-top: 3px; padding: 5px 0; }
+.discipline-icon { border: 1px dashed #919178; }
 
-.tooltip.left { margin-left: -3px; padding: 0 5px; }
+.size-icon { background-color: #ee483d; }
 
-.tooltip-inner { max-width: 200px; padding: 8px; color: #ffffff; text-align: center; text-decoration: none; background-color: #ee483d; }
+.type-icon { background-image: url("../assets/shape_icons.png"); height: 30px; width: 16px; overflow: hidden; }
 
-.tooltip-arrow { position: absolute; width: 0; height: 0; border-color: transparent; border-style: solid; }
+/*DISCIPLINE*/
+.dance-icon { background-color: #c5daf2; }
 
-.tooltip.top .tooltip-arrow { bottom: 0; left: 50%; margin-left: -5px; border-width: 5px 5px 0; border-top-color: #ee483d; }
+.film-icon { background-color: #fff1bb; }
 
-.tooltip.right .tooltip-arrow { top: 50%; left: 0; margin-top: -5px; border-width: 5px 5px 5px 0; border-right-color: #000000; }
+.music-icon { background-color: #fae0be; }
 
-.tooltip.left .tooltip-arrow { top: 50%; right: 0; margin-top: -5px; border-width: 5px 0 5px 5px; border-left-color: #000000; }
+.theater-icon { background-color: #efc0c0; }
 
-.tooltip.bottom .tooltip-arrow { top: 0; left: 50%; margin-left: -5px; border-width: 0 5px 5px; border-bottom-color: #000000; }
+.visual-icon { background-color: #dea99d; }
+
+.multi-discipline-icon { background-color: #e4c5d5; }
+
+/*SIZE*/
+.small-org { width: 12.57143%; }
+
+.medium-org { width: 14.57143%; }
+
+.large-org { width: 16.57143%; }
+
+/*TYPE*/
+/*FUNDING STRUCTURE*/
+.commercial-icon { border: solid 3px #ee483d; }
+
+.government-icon { border: solid 3px blue; }
+
+.informal-icon { border: solid 3px green; }
+
+.non-profit-icon { border: solid 3px gold; }
 
 .chosen-container-single .chosen-single, .chosen-container-single .chosen-single div { padding: 0.25em; box-sizing: content-box; }
 
@@ -276,12 +315,26 @@ html, body { height: 100%; }
 .chosen-container .chosen-results li em { font-style: normal; text-decoration: underline; }
 
 /* @end */
-.checkbox-container { margin-top: 0.5em; }
+.tooltip { position: absolute; z-index: 1030; display: block; visibility: visible; font-size: 11px; line-height: 1.4; opacity: 0; filter: alpha(opacity=0); }
 
-.checkbox { width: 50%; }
+.tooltip.in { opacity: 0.8; filter: alpha(opacity=80); }
 
-.cartodb-popup-content-wrapper { box-sizing: content-box !important; }
+.tooltip.top { margin-top: -3px; padding: 5px 0; }
 
-/********************* FROM CARTO DB 
-*********************/
-/** CartoDB2.0 popup styles (DEFAULT) */
+.tooltip.right { margin-left: 3px; padding: 0 5px; }
+
+.tooltip.bottom { margin-top: 3px; padding: 5px 0; }
+
+.tooltip.left { margin-left: -3px; padding: 0 5px; }
+
+.tooltip-inner { max-width: 200px; padding: 8px; color: #ffffff; text-align: center; text-decoration: none; background-color: #ee483d; }
+
+.tooltip-arrow { position: absolute; width: 0; height: 0; border-color: transparent; border-style: solid; }
+
+.tooltip.top .tooltip-arrow { bottom: 0; left: 50%; margin-left: -5px; border-width: 5px 5px 0; border-top-color: #ee483d; }
+
+.tooltip.right .tooltip-arrow { top: 50%; left: 0; margin-top: -5px; border-width: 5px 5px 5px 0; border-right-color: #000000; }
+
+.tooltip.left .tooltip-arrow { top: 50%; right: 0; margin-top: -5px; border-width: 5px 0 5px 5px; border-left-color: #000000; }
+
+.tooltip.bottom .tooltip-arrow { top: 0; left: 50%; margin-left: -5px; border-width: 0 5px 5px; border-bottom-color: #000000; }

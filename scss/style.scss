@@ -26,6 +26,7 @@
  THEMES 
 *********************/
 @import "themes/color";
+@import "themes/grid";
 @import "themes/typography";
 @import "themes/primary";
 
@@ -33,7 +34,8 @@
  PARTIALS 
 *********************/
 @import "partials/base";
-@import "partials/tooltip";
-@import "partials/select";
 @import "partials/checkbox";
 @import "partials/infowindow";
+@import "partials/legend";
+@import "partials/select";
+@import "partials/tooltip";

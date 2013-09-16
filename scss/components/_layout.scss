@@ -1,3 +1,6 @@
+/*********************
+ GRID GLOBALS 
+*********************/
 .clearfix {
   zoom: 1;
 	&:before, &:after { content: ""; display: table; }
@@ -12,13 +15,26 @@
     float: right;
 }
 
+.first {
+	margin-left : 0 !important;
+}
+
+.last {
+	margin-right : 0 !important;
+}
+
 .row {
+	@extend .clearfix;
+
 	div {
 		@extend .pull-left;
 		@extend .clearfix;
 	}
 }
 
+/*********************
+ 3D 
+*********************/
 %arrange-front {
 	position : relative;
 	z-index: 99;

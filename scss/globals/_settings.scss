@@ -7,6 +7,20 @@ $tan-Light : #edece6;
 $tan-Medium : #c4c3b4;
 $tan-dark : #96947B; 
 
+/*Legend*/
+$discipline-border-color : #919178;
+$dance-icon-color : #C5DAF2;
+$film-icon-color : #FFF1BB;
+$music-icon-color : #FAE0BE;
+$theater-icon-color : #EFC0C0;
+$visual-icon-color : #DEA99D;
+$multi-discipline-icon-color : #E4C5D5;
+$commercial-icon-color : $red;
+$government-icon-color : blue;
+$informal-icon-color : green;
+$non-profit-icon-color : gold;
+
+
 /*********************
  DIMENSION 
 *********************/
@@ -20,6 +34,10 @@ $margin-XS : 0.5em;
 $margin-S : 1em;
 $margin-M : 1.5em;
 $margin-L : 2em;
+
+/*legend*/
+$square-width : 10.5714285714%; 
+$square-margin : 4%;
 
 /*********************
  TYPOGRAPHY 
@@ -38,4 +56,8 @@ $logo-width : 16em;
 $key-tab-top : 23px;
 $filters-tab-top : 57px;
 
-$map-controller-width : 25em;
+$map-controller-width : 24em;
+
+
+
+

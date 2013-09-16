@@ -1,0 +1,87 @@
+.icon-set {
+	margin : $margin-XXS 0 $margin-XXS 0;
+}
+
+.discipline-icon, .funding-icon {
+	@extend %col;
+	@extend %span1;	
+}
+
+.discipline-icon {
+	border : 1px dashed $discipline-border-color;
+}
+
+.size-icon {
+	@extend %col;
+	background-color : $red
+}
+
+.type-icon {
+	@extend %col;
+	background-image : url('../assets/shape_icons.png');
+	height : 30px;
+	width: 16px;
+	overflow: hidden;
+}
+/*DISCIPLINE*/
+.dance-icon {
+	background-color : $dance-icon-color;
+}
+
+.film-icon {
+	background-color : $film-icon-color;
+}
+
+.music-icon {
+	background-color : $music-icon-color;
+}
+
+.theater-icon {
+	background-color : $theater-icon-color;
+}
+
+.visual-icon {
+	background-color : $visual-icon-color;
+}
+
+.multi-discipline-icon {
+	background-color : $multi-discipline-icon-color;
+}
+/*SIZE*/
+.tiny-org {
+	@extend %span1;
+}
+
+.small-org {
+	width : $square-width+2%;
+}
+
+.medium-org {
+	width : $square-width+4%;
+}
+
+.large-org {
+	width : $square-width+6%;
+}
+/*TYPE*/
+.presenting-icon {
+	
+}
+/*FUNDING STRUCTURE*/
+.commercial-icon {
+	border : solid 3px $commercial-icon-color;
+}
+
+.government-icon {
+	border : solid 3px $government-icon-color;
+}
+
+.informal-icon {
+	border : solid 3px $informal-icon-color;
+}
+
+.non-profit-icon {
+	border : solid 3px $non-profit-icon-color;
+}
+
+
