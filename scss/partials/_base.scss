@@ -57,4 +57,19 @@
 	@extend %fill-screen;
 }
 
+.leaflet-bar {
+	box-shadow: 0 0 8px lighten($red, 15%);
+	border: none;
+}
+
+.leaflet-control-zoom a {
+	color : $red;
+	width: 30px;
+	height : 30px;
+}
+
+.leaflet-bar-part {
+	border-bottom : solid 1px lighten($red, 30%);
+}
+
 #messages { position: absolute; bottom: 0; left: 10px; width: 35%; height: auto;}
