@@ -183,7 +183,7 @@ html, body { height: 100%; }
 
 /********************* 3D 
 *********************/
-.top-menu, .box { position: relative; z-index: 99; }
+.top-menu, .legend-container, .filters-form-container, .box-tab { position: relative; z-index: 99; }
 
 .u-isHidden { display: none !important; visibility: hidden !important; }
 
@@ -193,7 +193,7 @@ html, body { height: 100%; }
 *********************/
 /********************* SHADOW 
 *********************/
-.top-menu, .box { box-shadow: 0px 8px 15px -5px #f48a83; }
+.top-menu, .legend-container, .filters-form-container, .box-tab { box-shadow: 0px 8px 15px -5px #f48a83; }
 
 /********************* LEGEND 7-COLUMN GRID 
 *********************/
@@ -201,11 +201,13 @@ html, body { height: 100%; }
 
 .discipline-icon, .funding-icon, .tiny-org { width: 10.57143%; }
 
-.top-menu, .box { font-family: "tablet-gothic-condensed", sans-serif; font-style: normal; font-weight: 400; text-transform: uppercase; }
+.top-menu, .legend-container, .filters-form-container, .box-tab { font-family: "tablet-gothic-condensed", sans-serif; font-style: normal; font-weight: 400; text-transform: uppercase; }
 
 /*Custom Mixin to adjust box-tab top*/
-.top-menu, .box { color: #ee483d; background-color: white; }
-.top-menu .invert-theme, .box .invert-theme { color: white; background-color: #ee483d; }
+.top-menu, .legend-container, .filters-form-container { color: #ee483d; background-color: white; }
+.top-menu .invert-theme, .legend-container .invert-theme, .filters-form-container .invert-theme { color: white; background-color: #ee483d; }
+
+.box-tab { color: white; background-color: #ee483d; }
 
 /********************* PARTIALS 
 *********************/
@@ -219,13 +221,21 @@ html, body { height: 100%; }
 *********************/
 .map-controller { width: 24em; background: transparent; }
 
-.box { margin: 1.5em; margin-left: 3.5em; padding: 1em; }
+.box { position: relative; margin: 1.5em; margin-left: 3.5em; }
 
-.box-tab { -webkit-transform-origin: 0 bottom; -moz-transform-origin: 0 bottom; -ms-transform-origin: 0 bottom; -o-transform-origin: 0 bottom; -transform-origin: 0 bottom; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); -o-transform: rotate(-90deg); -transform: rotate(-90deg); transform: rotate(-90deg); display: inline-block; position: absolute; top: 0; left: 0; padding: 0.5em; }
+.key-container { min-height: 76px; }
 
-#legend .box-tab { top: 5px; }
+.box-tab { position: absolute; width: 35px; top: 0; left: -35px; }
+.box-tab .bt-key { margin-top: 13px; }
+.box-tab .bt-filters { margin-top: 37px; }
 
-.filters .box-tab { top: 28px; }
+.box-tab-vertical { -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); -o-transform: rotate(-90deg); -transform: rotate(-90deg); transform: rotate(-90deg); width: 0; margin-left: 7.5px; padding: 0.5em 0.5em 0 0; }
+
+.box-tab-toggle { padding: 0.5em 0 0.5em 0; text-align: center; font-size: 85%; border-top: solid 1px white; cursor: pointer; }
+
+.legend-container, .filters-form-container { padding: 1em; }
+
+.box-hidden { visibility: hidden; height: 0; }
 
 /********************* MAP 
 *********************/

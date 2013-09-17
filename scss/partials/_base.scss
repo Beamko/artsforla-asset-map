@@ -25,26 +25,65 @@
 }
 
 .box {
-	@extend %theme-primary;
-
+	//@extend %theme-primary;
+	position : relative;
 	margin : $margin-M;
 	margin-left : $margin-M+$margin-L;
+
+}
+
+.key-container {
+	min-height : 76px;
+}
+
+.box-tab {	
+	@extend %theme-primary-inverse;
+	position: absolute;
+	width : 35px;
+	top: 0; 
+	left: -35px;
+	
+
+	.bt-key {
+		margin-top: 13px;
+	}
+
+	.bt-filters {
+		margin-top: 37px;
+	}
+}
+
+.box-tab-vertical {
+	//@include transform-origin(0 bottom);
+	@include transform(rotate(-90deg) );
+
+	width : 0;
+	margin-left : 7.5px;
+	padding : $padding-S $padding-S  0 0;	
+}
+
+
+.box-tab-toggle {
+	padding : $padding-S 0 $padding-S 0;	
+	text-align : center;
+	font-size : 85%;
+	border-top : solid 1px white;
+	cursor : pointer;
+}
+
+.legend-container, .filters-form-container {
+	@extend %theme-primary;
+
 	padding: $padding-L;
 }
 
-.box-tab {
-	@include transform-origin(0 bottom);
-	@include transform(rotate(-90deg) );
-	
-	display : inline-block;
-	position: absolute;
-	top: 0; //will vary per tab-box title
-	left: 0;
-	padding : $padding-S;
+.box-hidden {
+	visibility : hidden;
+	height : 0;
 }
 
-#legend .box-tab { top : $key-tab-top}
-.filters .box-tab { top : $filters-tab-top }
+// #legend .box-tab { top : $key-tab-top}
+// .filters .box-tab { top : $filters-tab-top }
 
 /*********************
  MAP 

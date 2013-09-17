@@ -13,3 +13,14 @@
 	}
 	
 }
+
+%theme-primary-inverse {
+	@extend %arrange-front;
+	@extend %red-shadow;
+	
+	@include set-font($font-name);
+
+	color : $white;
+	background-color : $red;
+	
+}

@@ -198,6 +198,17 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
 
 	$('.chosen').chosen({disable_search:true, inherit_select_classes:true});
 
+	$('.box-tab-toggle').click(function() {
+		var $target = $('.' + this.dataset.target);
+		if ($target.hasClass('box-hidden') ) {
+			$target.removeClass('box-hidden');
+			$(this).children('.ss-icon').text('remove');
+		} else { 
+			$target.addClass('box-hidden');
+			$(this).children('.ss-icon').text('add');
+		}
+	});
+	
 });
 
 
