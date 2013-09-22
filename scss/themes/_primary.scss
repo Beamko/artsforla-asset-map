@@ -7,11 +7,20 @@
 	color : $red;
 	background-color : $white;
 
+	.light-accent {
+		color : $pink;
+	}
+
 	.invert-theme {
 		color : $white;
 		background-color : $red;
 	}
 	
+}
+
+a.primary {
+	color : $red;
+	text-decoration: none;
 }
 
 %theme-primary-inverse {

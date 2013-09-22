@@ -193,7 +193,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
 	*********************/
 	$('.legend-row').tooltip({
 	      selector: "a[data-toggle=tooltip]",
-	      trigger : 'click'
+	      trigger : 'hover'
 	    });
 
 	$('.chosen').chosen({disable_search:true, inherit_select_classes:true});

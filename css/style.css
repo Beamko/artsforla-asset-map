@@ -470,7 +470,7 @@ html, body {
   float: left; }
 
 .pull-right {
-  float: right; }
+  float: right !important; }
 
 .first {
   margin-left: 0 !important; }
@@ -481,7 +481,7 @@ html, body {
 /*********************
  3D 
 *********************/
-.top-menu, .legend-container, .filters-form-container, .box-tab {
+.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab {
   position: relative;
   z-index: 99; }
 
@@ -501,10 +501,7 @@ html, body {
 /*********************
  THEMES 
 *********************/
-/*********************
- SHADOW 
-*********************/
-.top-menu, .legend-container, .filters-form-container, .box-tab {
+.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab {
   box-shadow: 0px 8px 15px -5px #f48a83; }
 
 /*********************
@@ -517,19 +514,25 @@ html, body {
 .discipline-icon, .funding-icon, .tiny-org {
   width: 10.57143%; }
 
-.top-menu, .legend-container, .filters-form-container, .box-tab {
+.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab {
   font-family: "tablet-gothic-condensed", sans-serif;
   font-style: normal;
   font-weight: 400;
   text-transform: uppercase; }
 
 /*Custom Mixin to adjust box-tab top*/
-.top-menu, .legend-container, .filters-form-container {
+.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper {
   color: #ee483d;
   background-color: white; }
-  .top-menu .invert-theme, .legend-container .invert-theme, .filters-form-container .invert-theme {
+  .top-menu .light-accent, .legend-container .light-accent, .filters-form-container .light-accent, .cartodb-popup-content-wrapper .light-accent {
+    color: #f8b7b2; }
+  .top-menu .invert-theme, .legend-container .invert-theme, .filters-form-container .invert-theme, .cartodb-popup-content-wrapper .invert-theme {
     color: white;
     background-color: #ee483d; }
+
+a.primary {
+  color: #ee483d;
+  text-decoration: none; }
 
 .box-tab {
   color: white;
@@ -644,6 +647,27 @@ input[type="checkbox"]:checked + label span {
 
 .cartodb-popup-content-wrapper {
   box-sizing: content-box !important; }
+
+div.cartodb-popup {
+  background: none; }
+
+div.cartodb-popup div.cartodb-popup-content-wrapper {
+  background: white; }
+
+div.cartodb-popup div.carto-db-close-button-container {
+  position: absolute;
+  top: 10px;
+  right: -16px;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  background: none;
+  font-size: 75%;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
+  filter: alpha(opacity=100);
+  z-index: 999; }
 
 /*********************
  FROM CARTO DB 
@@ -836,6 +860,9 @@ input[type="checkbox"]:checked + label span {
       text-decoration: underline; }
 
 /* @end */
+a.info-tooltip {
+  text-decoration: none; }
+
 .tooltip {
   position: absolute;
   z-index: 1030;
@@ -893,7 +920,7 @@ input[type="checkbox"]:checked + label span {
   left: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
-  border-right-color: #000000; }
+  border-right-color: #ee483d; }
 
 .tooltip.left .tooltip-arrow {
   top: 50%;

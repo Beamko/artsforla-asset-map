@@ -1,5 +1,30 @@
 .cartodb-popup-content-wrapper {
+	@extend %theme-primary;
 	box-sizing : content-box !important;
+}
+
+div.cartodb-popup {
+	background: none;
+}
+
+div.cartodb-popup div.cartodb-popup-content-wrapper {
+	background: $white;
+}
+
+div.cartodb-popup div.carto-db-close-button-container {
+     position:absolute;
+     top:10px;
+     right:-16px;
+     width:26px;
+     height:26px;
+     padding:0;
+     background: none;
+     font-size: 75%;
+     opacity:1;
+     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
+     filter: alpha(opacity=100);
+     z-index:999;
 }
 
 /*********************
