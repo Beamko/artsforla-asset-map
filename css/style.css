@@ -785,7 +785,7 @@ div.cartodb-popup div.carto-db-close-button-container {
   margin-right: 26px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: white; }
+  color: green; }
 .chosen-container-single .chosen-single-with-deselect span {
   margin-right: 38px; }
 .chosen-container-single .chosen-single abbr {
