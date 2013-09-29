@@ -30,89 +30,111 @@
   <div class="map-controller">
       <div id="legend" class="box key-container">
         <div class="box-tab-container">
-          <header class="box-tab">
-            <div><div class="box-tab-vertical bt-key">KEY</div></div>
-            <div class="box-tab-toggle" data-target="legend-container">
-              <i class="ss-icon remove-icon">remove</i>
-          </header>
+            <header class="box-tab">
+                <div><div class="box-tab-vertical bt-key">KEY</div></div>
+                <div class="box-tab-toggle" data-target="legend-container">
+                    <i class="ss-icon remove-icon">remove</i>
+                </div>
+            </header>
         </div>
         <div class="legend-container">
-          <div class="legend-row">
-            <!-- <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Tooltip on top</a> -->
-            <div class="row">
-              <div><h3 class="box-label">DISCIPLINE</h3></div>
-              <div class="pull-right"><a href="#" data-toggle="tooltip" class="info-tooltip" data-placement="right" title="" data-original-title="Lorem Ipsum Informational"><i class="ss-icon light-accent">info</i></a></div>
-            </div>
-            <div class="icon-set row">
-              <div class="discipline-icon dance-icon first">
-                <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dance">
-                <img src="assets/legend-square.png" class="flex-image" /></a>
-              </div>
-              <div class="discipline-icon film-icon">
-                <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Film">
-                <img src="assets/legend-square.png" class="flex-image" /></a>
-              </div>
-              <div class="discipline-icon music-icon">
-                <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Music">
-                <img src="assets/legend-square.png" class="flex-image" /></a>
-              </div>
-              <div class="discipline-icon music-icon">
-                <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Music">
-                <img src="assets/legend-square.png" class="flex-image" /></a>
-              </div>
-              <div class="discipline-icon theater-icon">
-                <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Theater">
-                <img src="assets/legend-square.png" class="flex-image" /></a>
-              </div>
-              <div class="discipline-icon visual-icon">
-                <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Visual">
-                <img src="assets/legend-square.png" class="flex-image" /></a>
-              </div>
-              <div class="discipline-icon multi-discipline-icon last"><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Multi-Disciplinary"><img src="assets/legend-square.png" class="flex-image" /></a></div>
-            </div>
-          </div>
-          <div class="legend-row">
-            <h3 class="box-label">SIZE</h3>
-            <div class="icon-set row">
-              <div class="size-icon tiny-org first">
-                <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Small">
-                <img src="assets/legend-square.png" class="flex-image" /></a>
-              </div>
-              <div class="size-icon small-org">
-                <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Small to Medium">
-                <img src="assets/legend-square.png" class="flex-image" /></a>
-              </div>
-              <div class="size-icon medium-org">
-              <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Medium">
-                <img src="assets/legend-square.png" class="flex-image" /></a>
-              </div>
-              <div class="size-icon large-org">
-                <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Large">
-                <img src="assets/legend-square.png" class="flex-image" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="legend-row">
-            <h3 class="box-label">TYPE</h3>
-            <div class="icon-set row">
-              <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Presenting"><div class="type-icon presenting-icon first"></div></a>
-              <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Educational"><div class="type-icon educational-icon"></div></a>
-              <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Community"><div class="type-icon community-icon"></div></a>
-              <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Infrastructure"><div class="type-icon infrastructure-icon"></div></a>
-              <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Multi"><div class="type-icon multi-type-icon"></div></a>
-            </div>
-          </div>
-          <!-- <div class="legend-row">
-            <h3 class="box-label">FUNDING STRUCTURE</h3>
-            <div class="icon-set row">
-              <div class="funding-icon commercial-icon first"><img src="assets/legend-square.png" class="flex-image" /></div>
-              <div class="funding-icon government-icon"><img src="assets/legend-square.png" class="flex-image" /></div>
-              <div class="funding-icon informal-icon"><img src="assets/legend-square.png" class="flex-image" /></div>
-              <div class="funding-icon non-profit-icon"><img src="assets/legend-square.png" class="flex-image" /></div>
-            </div>
-          </div> -->
-        </div>
-      </div>
+            <div class="legend-row">
+                <div class="row">
+                    <div><h3 class="box-label">DISCIPLINE</h3></div>
+                    <div class="pull-right">
+                        <a href="#" data-toggle="tooltip" class="info-tooltip" data-placement="right" title="" data-original-title="Lorem Ipsum Informational">
+                            <i class="ss-icon light-accent">info</i>
+                        </a>
+                    </div>
+                </div> <!-- END HEADER ROW -->
+
+                <div class="icon-set row">
+                    <div class="discipline-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dance">
+                        <div class="dance-icon"></div>
+                        </a>
+                    </div>
+                    <div class="discipline-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Film">
+                        <div class="film-icon"></div>
+                        </a>
+                    </div>
+                    <div class="discipline-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Literary">
+                        <div class="literary-icon"></div>
+                        </a>
+                    </div>
+                    <div class="discipline-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Music">
+                        <div class="music-icon"></div>
+                        </a>
+                    </div>
+                    <div class="discipline-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Theater">
+                        <div class="theater-icon"></div>
+                        </a>
+                    </div>
+                    <div class="discipline-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Visual">
+                        <div class="visual-icon"></div>
+                        </a>
+                    </div>
+                    <div class="discipline-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Multi-Disciplinary">
+                        <div class="multi-discipline-icon"></div>
+                        </a>
+                    </div>
+                </div><!-- END ICON ROW -->
+            </div><!-- END DISCIPLINE ROW -->
+
+            <div class="legend-row">
+                <h3 class="box-label">SIZE</h3>
+                <div class="icon-set row">
+                    <div class="size-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Small">
+                        <div class="tiny-org"></div>
+                        </a>
+                    </div>
+                    <div class="size-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Small to Medium">
+                        <div class="small-org"></div>
+                        </a>
+                    </div>
+                    <div class="size-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Medium">
+                        <div class="medium-org"></div>
+                        </a>
+                    </div>
+                    <div class="size-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Large">
+                        <div class="large-org"></div>
+                        </a>
+                    </div>
+                </div><!-- END ICON SET -->
+            </div><!-- END SIZE ROW -->
+
+            <div class="legend-row">
+                <h3 class="box-label">TYPE</h3>
+                <div class="icon-set row">
+                    <div class="type-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Presenting"><div class=" presenting-icon"></div></a>
+                    </div>
+                    <div class="type-icon-container">
+                         <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Educational"><div class=" educational-icon"></div></a>
+                    </div>
+                    <div class="type-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Community"><div class="community-icon"></div></a>
+                    </div>
+                    <div class="type-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Infrastructure"><div class="infrastructure-icon"></div></a>
+                    </div>
+                    <div class="type-icon-container">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Multi"><div class="multi-type-icon"></div></a>
+                    </div>
+                </div><!-- END ICON SET ROW -->
+            </div> <!-- END TYPE ROW -->
+          </div> <!-- END LEGEND CONTAINER -->
+      </div> <!-- END KEY BOX -->
 
       <div class="box filters filters-container">
         <div class="box-tab-container">

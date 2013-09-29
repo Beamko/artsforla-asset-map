@@ -1,86 +1,88 @@
 .icon-set {
-	margin : $margin-XXS 0 $margin-XXS 0;
+    margin : $margin-XXS 0 $margin-XXS 0;
 }
 
-.discipline-icon, .funding-icon {
-	@extend %col;
-	@extend %span1;	
+.discipline-icon-container, .type-icon-container {
+    div {
+        width : 30px;
+        height : 30px;
+    }
 }
 
-.discipline-icon {
-	border : 1px dashed $discipline-border-color;
-}
-
-.size-icon {
-	@extend %col;
-	background-color : $red
-}
-
-.type-icon {
-	@extend %col;
-	background-image : url('../assets/shape_icons.png');
-	height : 30px;
-	width: 16px;
-	overflow: hidden;
+.size-icon-container {
+    div {
+        height : 30px;
+    }
 }
 /*DISCIPLINE*/
 .dance-icon {
-	background-color : $dance-icon-color;
+    background : url('../assets/sprite-sheet.png') no-repeat left top;
 }
 
 .film-icon {
-	background-color : $film-icon-color;
+    background : url('../assets/sprite-sheet.png') no-repeat -30px top;
+}
+
+.literary-icon {
+    background : url('../assets/sprite-sheet.png') no-repeat  -60px top;
 }
 
 .music-icon {
-	background-color : $music-icon-color;
+    background : url('../assets/sprite-sheet.png') no-repeat -90px top;
 }
 
 .theater-icon {
-	background-color : $theater-icon-color;
+    background : url('../assets/sprite-sheet.png') no-repeat -120px top;
 }
 
 .visual-icon {
-	background-color : $visual-icon-color;
+    background : url('../assets/sprite-sheet.png') no-repeat -150px top;
 }
 
 .multi-discipline-icon {
-	background-color : $multi-discipline-icon-color;
+    background : url('../assets/sprite-sheet.png') no-repeat -180px top;
 }
 /*SIZE*/
 .tiny-org {
-	@extend %span1;
+    background : url('../assets/sprite-sheet.png') no-repeat 0px -30px;
+    width: 15px;
 }
 
 .small-org {
-	width : $square-width+2%;
+    background : url('../assets/sprite-sheet.png') no-repeat -30px -30px;
+    width: 20px;
+    margin-left: 8px;
 }
 
 .medium-org {
-	width : $square-width+4%;
+    background : url('../assets/sprite-sheet.png') no-repeat -60px -30px;
+    width: 30px;
+    margin-left: 8px;
 }
 
 .large-org {
-	width : $square-width+6%;
+    background : url('../assets/sprite-sheet.png') no-repeat -90px -30px;
+    width: 30px;
+    margin-left: 2px;
 }
 /*TYPE*/
 .presenting-icon {
-}
-/*FUNDING STRUCTURE*/
-.commercial-icon {
-	border : solid 3px $commercial-icon-color;
+    background : url('../assets/sprite-sheet.png') no-repeat 0px -60px;
 }
 
-.government-icon {
-	border : solid 3px $government-icon-color;
+.educational-icon {
+    background : url('../assets/sprite-sheet.png') no-repeat -30px -60px;
 }
 
-.informal-icon {
-	border : solid 3px $informal-icon-color;
+.community-icon {
+    background : url('../assets/sprite-sheet.png') no-repeat -60px -60px;
 }
 
-.non-profit-icon {
-	border : solid 3px $non-profit-icon-color;
+.infrastructure-icon {
+    background : url('../assets/sprite-sheet.png') no-repeat -90px -60px;
 }
 
+.multi-type-icon {
+    background : url('../assets/sprite-sheet.png') no-repeat -120px -60px;
+}
 
