@@ -1,29 +1,29 @@
 /*********************
- NORMALIZE 
+ NORMALIZE
 *********************/
 @import "vendor/normalize";
 @import "vendor/suit-base";
 
 /*********************
- VENDOR 
+ VENDOR
 *********************/
 //@import "vendor/bootstrap-tooltip";
 
 /*********************
- GLOBAL SETTINGS 
+ GLOBAL SETTINGS
 *********************/
 @import "globals/settings";
 @import "globals/mixins";
 
 /*********************
- COMPONENTS 
+ COMPONENTS
 *********************/
 @import "components/dimension";
 @import "components/layout";
 @import "components/state";
 
 /*********************
- THEMES 
+ THEMES
 *********************/
 @import "themes/color";
 @import "themes/grid";
@@ -31,11 +31,12 @@
 @import "themes/primary";
 
 /*********************
- PARTIALS 
+ PARTIALS
 *********************/
 @import "partials/base";
 @import "partials/checkbox";
 @import "partials/infowindow";
 @import "partials/legend";
+@import "partials/search-results";
 @import "partials/select";
 @import "partials/tooltip";

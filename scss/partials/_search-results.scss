@@ -1,0 +1,27 @@
+.search-results-container {
+    div {
+        padding : $padding-XS;
+        
+    }
+}
+
+.search-results {
+    height : 2.1em;
+    background : $light-pink;
+    padding-left:0.8em !important;
+    
+}
+
+.reset-search-button {
+    @extend %theme-primary-inverse-flat;
+    width: 9em;
+    margin-left: 0;
+    cursor: pointer;
+    height : 2.1em;
+    padding: 0 !important;
+    padding-left: 0.5em !important;
+    i.ss-icon{font-size: 0.8em;}
+}
+.reset-search-button:hover{
+	background : darken($red, 8%);
+}

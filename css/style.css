@@ -1,5 +1,5 @@
 /*********************
- NORMALIZE 
+ NORMALIZE
 *********************/
 /* ==========================================================================
    Normalize.scss settings
@@ -395,21 +395,21 @@ ul {
   outline: none; }
 
 /*********************
- VENDOR 
+ VENDOR
 *********************/
 /*********************
- GLOBAL SETTINGS 
+ GLOBAL SETTINGS
 *********************/
 /*********************
- COLORS 
+ COLORS
 *********************/
 /*Legend*/
 /*********************
- DIMENSION 
+ DIMENSION
 *********************/
 /*legend*/
 /*********************
- TYPOGRAPHY 
+ TYPOGRAPHY
 *********************/
 /*options: atrament-web || tablet-gothic-condensed*/
 /*********************
@@ -423,7 +423,7 @@ ul {
  TYPOGRAPHY
 *********************/
 /*********************
- COMPONENTS 
+ COMPONENTS
 *********************/
 /*WARNING box-sizing affects carto-db infowindows*/
 * {
@@ -456,7 +456,7 @@ html, body {
   vertical-align: top; }
 
 /*********************
- GRID GLOBALS 
+ GRID GLOBALS
 *********************/
 .clearfix, .row, .row div {
   zoom: 1; }
@@ -467,9 +467,11 @@ html, body {
     clear: both; }
 
 .pull-left, .row div {
+  position: relative;
   float: left; }
 
 .pull-right {
+  position: relative;
   float: right !important; }
 
 .first {
@@ -479,9 +481,9 @@ html, body {
   margin-right: 0 !important; }
 
 /*********************
- 3D 
+ 3D
 *********************/
-.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab {
+.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab, .reset-search-button {
   position: relative;
   z-index: 99; }
 
@@ -499,13 +501,13 @@ html, body {
   clip: rect(1px, 1px, 1px, 1px); }
 
 /*********************
- THEMES 
+ THEMES
 *********************/
 .top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab {
   box-shadow: 0px 8px 15px -5px #f48a83; }
 
 /*********************
- LEGEND 7-COLUMN GRID 
+ LEGEND 7-COLUMN GRID
 *********************/
 .discipline-icon, .funding-icon, .size-icon, .type-icon {
   margin-left: 4%;
@@ -514,11 +516,75 @@ html, body {
 .discipline-icon, .funding-icon, .tiny-org {
   width: 10.57143%; }
 
-.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab {
+/*********************
+ 12-COLUMN GRID
+*********************/
+.span1 {
+  width: 5.801104972%; }
+
+/* 4.85%;  } /* grid_1  */
+.span2 {
+  width: 14.364640883%; }
+
+/* 13.45%; } /* grid_2  */
+.span3 {
+  width: 22.928176794%; }
+
+/* 22.05%; } /* grid_3  */
+.span4 {
+  width: 31.491712705%; }
+
+/* 30.75%; } /* grid_4  */
+.span5 {
+  width: 40.055248616%; }
+
+/* 39.45%; } /* grid_5  */
+.span6 {
+  width: 48.618784527%; }
+
+/* 48%;    } /* grid_6  */
+.span7 {
+  width: 57.182320438000005%; }
+
+/* 56.75%; } /* grid_7  */
+.span8 {
+  width: 65.74585634900001%; }
+
+/* 65.4%;  } /* grid_8  */
+.span9 {
+  width: 74.30939226%; }
+
+/* 74.05%; } /* grid_9  */
+.span10 {
+  width: 82.87292817100001%; }
+
+/* 82.7%;  } /* grid_10 */
+.span11 {
+  width: 91.436464082%; }
+
+/* 91.35%; } /* grid_11 */
+.span12 {
+  width: 99.999999993%; }
+
+/* 100%;   } /* grid_12 */
+.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+  margin-left: 2.762430939%; }
+
+/*********************
+ FONTS
+*********************/
+.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab, .reset-search-button {
   font-family: "tablet-gothic-condensed", sans-serif;
   font-style: normal;
   font-weight: 400;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  letter-spacing: 0.1em; }
+
+/*********************
+ LAYOUT
+*********************/
+.text-center {
+  text-align: center; }
 
 /*Custom Mixin to adjust box-tab top*/
 .top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper {
@@ -538,25 +604,33 @@ a.primary {
   color: white;
   background-color: #ee483d; }
 
+.reset-search-button {
+  color: white;
+  background-color: #ee483d; }
+
 /*********************
- PARTIALS 
+ PARTIALS
 *********************/
 /*********************
- MENU 
+ MENU
 *********************/
 .top-menu {
-  height: 5em; }
+  height: 5.3em;
+  padding-top: 1.5em; }
 
 .logo {
-  width: 16em;
-  margin-left: 1.5em;
-  padding-top: 0.75em; }
+  width: 14em;
+  margin-left: 1.5em; }
+
+.tagline {
+  line-height: 1.4em;
+  margin-top: -0.4em; }
 
 /*********************
  MAP CONTROLS
 *********************/
 .map-controller {
-  width: 24em;
+  width: 22.92818%;
   background: transparent; }
 
 .box {
@@ -603,7 +677,7 @@ a.primary {
   height: 0; }
 
 /*********************
- MAP 
+ MAP
 *********************/
 .leaflet-bar {
   box-shadow: 0 0 8px #f48a83;
@@ -732,6 +806,27 @@ div.cartodb-popup div.carto-db-close-button-container {
 
 .non-profit-icon {
   border: solid 3px gold; }
+
+.search-results-container div {
+  padding: 0.25em; }
+
+.search-results {
+  height: 2.1em;
+  background: #fce3e1;
+  padding-left: 0.8em !important; }
+
+.reset-search-button {
+  width: 9em;
+  margin-left: 0;
+  cursor: pointer;
+  height: 2.1em;
+  padding: 0 !important;
+  padding-left: 0.5em !important; }
+  .reset-search-button i.ss-icon {
+    font-size: 0.8em; }
+
+.reset-search-button:hover {
+  background: #eb2517; }
 
 .chosen-container-single .chosen-single, .chosen-container-single .chosen-single div {
   padding: 0.25em;
