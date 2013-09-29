@@ -359,7 +359,7 @@ div.cartodb-popup div.carto-db-close-button-container { position: absolute; top:
 
 .search-results { height: 2.5em; background: #fce3e1; }
 
-.reset-search-button { width: 8em; margin-left: 0; }
+.reset-search-button { width: 8em; margin-left: 0; cursor: pointer; }
 
 .chosen-container-single .chosen-single, .chosen-container-single .chosen-single div { padding: 0.25em; box-sizing: content-box; }
 

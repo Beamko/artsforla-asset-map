@@ -5,6 +5,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
     var $disciplines = $('.checkbox input'),
         $railLines = $('#rail-lines'),
         $search_results = $('.search-results'),
+        $reset = $('.reset-search-button');
         // tableName = "lan_data_set",
         // cartoViz = "http://cs-chris.cartodb.com/api/v2/viz/ab1e8ce0-18c1-11e3-9831-5532403f69e3/viz.json",
         tableName = "merge",
@@ -14,8 +15,9 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
         self=this;
 
     function serialize(filters, layer) {
-        var searchTerms = [];
-        var query = $.isEmptyObject(filters) ? "SELECT * FROM " + tableName : "SELECT * FROM "+ tableName + " WHERE ";
+        var searchTerms = [],
+            query = $.isEmptyObject(filters) ? "SELECT * FROM " + tableName : "SELECT * FROM "+ tableName + " WHERE ",
+            results_count_join = $.isEmptyObject(filters) ? " WHERE " : " AND ";
 
         /*add filter properties to query string*/
         if ( Object.keys(filters).length ) {
@@ -34,27 +36,42 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
                     query += searchTerms[i];
                 }
             }
-            console.log(query);
-            //$messages.html('RESULTS FOR : ' + searchString.toUpperCase() );
-            layer.setQuery(query);
-            /*get results count*/
-            $.ajax({
-                url: 'http://cs-chris.cartodb.com/api/v2/sql',
-                type: 'GET',
-                dataType: 'json',
-                data : {'q' : query+' AND the_geom IS NOT NULL'}
-            })
-            .done(function(data) {
-                $search_results.html('SHOWING ' +data.total_rows+' ORGANIZATIONS');
-            })
-            .fail(function(e) {
-                console.log("error", e);
-            });
         }
+        console.log(query);
+        layer.setQuery(query);
+        getResultsCount(query, results_count_join);
+    }
+
+    function getResultsCount(query, join) {
+        $.ajax({
+            url: 'http://cs-chris.cartodb.com/api/v2/sql',
+            type: 'GET',
+            dataType: 'json',
+            data : {'q' : query+join+'the_geom IS NOT NULL'}
+        })
+        .done(function(data) {
+            $search_results.html('SHOWING ' +data.total_rows+' ORGANIZATIONS');
+        })
+        .fail(function(e) {
+            console.log("error", e);
+        });
+    }
+
+    function resetFiltersForm() {
+        $('input[type="checkbox"]:checked').attr('checked', false);
+        $('a.chosen-single>span').html('Any');
+        $('.js-childFilter').addClass('u-isHiddenVisually');
     }
 
     function createSelector(layer) {
-        var searchTerms = [];
+        var searchTerms = [],
+            currentParentFilter;
+
+        $reset.click(function(){
+            filters = {};
+            resetFiltersForm();
+            serialize(filters, layer);
+        });
 
         /*multi-checkbox filter*/
         $disciplines.click(function(e) {
@@ -95,8 +112,12 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
 
             /*generate query*/
             var queryColumn = this.dataset.column;
-            var value = $("option:selected",this).val();
-            value !== "Any" ? filters[queryColumn] = queryColumn + " ILIKE '%" + value + "%'" : delete filters[queryColumn];
+            var value = currentParentFilter = $("option:selected",this).val();
+            if (value !== "Any") {
+                filters[queryColumn] = queryColumn + " ILIKE '%" + value + "%'" ;
+            } else {
+                delete filters[queryColumn];
+            }
             serialize(filters, layer);
         });
 
@@ -104,7 +125,13 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
         $('.js-childFilter').change(function() {
             var queryColumn = this.dataset.column;
             var value = $("option:selected",this).val();
-            value !== "Any" ? filters[queryColumn] = queryColumn + " ILIKE '%" + value + "%'" : delete filters[queryColumn];
+            if (value !== "Any") {
+                filters[queryColumn] = queryColumn + " ILIKE '%" + value + "%'" ;
+            } else if (currentParentFilter !== "Any") {
+                    filters[queryColumn] = queryColumn + " ILIKE '%" + currentParentFilter + "%'" ;
+            } else {
+                delete filters[queryColumn];
+            }
             serialize(filters, layer);
         });
 
@@ -138,8 +165,8 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
         /*rail line child filter*/
         $('.js-metroChildFilter').change(function() {
             if ("line" in filters) {delete filters.line;}
-            var queryColumn = this.dataset.column,
-                railLine = this.dataset.line,
+          //  var queryColumn = this.dataset.column,
+            var railLine = this.dataset.line,
                 value = $("option:selected",this).val(),
                 stop = _.find(self[railLine].features, {"properties" : {'STATION' : value } });
 
@@ -149,7 +176,6 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
                 delete filters.station;
                 filters.line = SelectedLine;
             }
-
             serialize(filters, layer);
         });
     }
@@ -191,6 +217,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
                 });
             });
             createSelector(layer);
+            getResultsCount("SELECT * FROM " + tableName," WHERE ");
         });
 
 /*********************
