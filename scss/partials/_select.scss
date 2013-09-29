@@ -70,8 +70,7 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png');
     margin-right: 26px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    //color: $white;
-    color: green;
+    color: $white;
   }
   .chosen-single-with-deselect span {
     margin-right: 38px;
