@@ -2,16 +2,16 @@
  MENU 
 *********************/
 .top-menu {
-	@extend %fill-width;
-	@extend %theme-primary;
+    @extend %fill-width;
+    @extend %theme-primary;
 
-	height: $menu-height;
+    height: $menu-height;
 }
 
 .logo {
-	width : $logo-width;
-	margin-left : $margin-M;
-	padding-top : $padding-M;
+    width : $logo-width;
+    margin-left : $margin-M;
+    padding-top : $padding-M;
 }
 
 
@@ -19,67 +19,67 @@
  MAP CONTROLS
 *********************/
 .map-controller {
-	@extend %fill-height;
-	width : $map-controller-width;
-	background : transparent;
+    @extend %fill-height;
+    width : $map-controller-width;
+    background : transparent;
 }
 
 .box {
-	//@extend %theme-primary;
-	position : relative;
-	margin : $margin-M;
-	margin-left : $margin-M+$margin-L;
+    //@extend %theme-primary;
+    position : relative;
+    margin : $margin-M;
+    margin-left : $margin-M+$margin-L;
 
 }
 
 .key-container {
-	min-height : 76px;
+    min-height : 76px;
 }
 
-.box-tab {	
-	@extend %theme-primary-inverse;
-	position: absolute;
-	width : 35px;
-	top: 0; 
-	left: -35px;
-	
+.box-tab {  
+    @extend %theme-primary-inverse;
+    position: absolute;
+    width : 35px;
+    top: 0; 
+    left: -35px;
+    
 
-	.bt-key {
-		margin-top: 13px;
-	}
+    .bt-key {
+        margin-top: 13px;
+    }
 
-	.bt-filters {
-		margin-top: 37px;
-	}
+    .bt-filters {
+        margin-top: 37px;
+    }
 }
 
 .box-tab-vertical {
-	//@include transform-origin(0 bottom);
-	@include transform(rotate(-90deg) );
+    //@include transform-origin(0 bottom);
+    @include transform(rotate(-90deg) );
 
-	width : 0;
-	margin-left : 7.5px;
-	padding : $padding-S $padding-S  0 0;	
+    width : 0;
+    margin-left : 7.5px;
+    padding : $padding-S $padding-S  0 0;   
 }
 
 
 .box-tab-toggle {
-	padding : $padding-S 0 $padding-S 0;	
-	text-align : center;
-	font-size : 85%;
-	border-top : solid 1px white;
-	cursor : pointer;
+    padding : $padding-S 0 $padding-S 0;    
+    text-align : center;
+    font-size : 85%;
+    border-top : solid 1px white;
+    cursor : pointer;
 }
 
 .legend-container, .filters-form-container {
-	@extend %theme-primary;
+    @extend %theme-primary;
 
-	padding: $padding-L;
+    padding: $padding-L;
 }
 
 .box-hidden {
-	visibility : hidden;
-	height : 0;
+    visibility : hidden;
+    height : 0;
 }
 
 // #legend .box-tab { top : $key-tab-top}
@@ -89,26 +89,26 @@
  MAP 
 *********************/
 .map-container { 
-	@extend %fill-height;
+    @extend %fill-height;
 }
 
 #map { 
-	@extend %fill-screen;
+    @extend %fill-screen;
 }
 
 .leaflet-bar {
-	box-shadow: 0 0 8px lighten($red, 15%);
-	border: none;
+    box-shadow: 0 0 8px lighten($red, 15%);
+    border: none;
 }
 
 .leaflet-control-zoom a {
-	color : $red;
-	width: 30px;
-	height : 30px;
+    color : $red;
+    width: 30px;
+    height : 30px;
 }
 
 .leaflet-bar-part {
-	border-bottom : solid 1px lighten($red, 30%);
+    border-bottom : solid 1px lighten($red, 30%);
 }
 
 #messages { position: absolute; bottom: 0; left: 10px; width: 35%; height: auto;}
