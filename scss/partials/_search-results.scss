@@ -1,0 +1,16 @@
+.search-results-container {
+    div {
+        padding : $padding-XS;
+    }
+}
+
+.search-results {
+    height : 2.5em;
+    background : $light-pink;
+}
+
+.reset-search-button {
+    @extend %theme-primary-inverse-flat;
+    width: 8em;
+    margin-left: 0;
+}

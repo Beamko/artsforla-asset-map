@@ -1,11 +1,32 @@
 /*********************
- LEGEND 7-COLUMN GRID 
+ LEGEND 7-COLUMN GRID
 *********************/
 %col {
 	margin-left: $square-margin;
 	padding: 0 0%;
 }
 
-%span1 { 
-	width: $square-width;  
+%span1 {
+	width: $square-width;
+}
+
+/*********************
+ 12-COLUMN GRID
+*********************/
+.span1    { width: 5.801104972%;  }       /* 4.85%;  } /* grid_1  */
+.span2    { width: 14.364640883%; }       /* 13.45%; } /* grid_2  */
+.span3  { width: 22.928176794%; }       /* 22.05%; } /* grid_3  */
+.span4   { width: 31.491712705%; }       /* 30.75%; } /* grid_4  */
+.span5   { width: 40.055248616%; }       /* 39.45%; } /* grid_5  */
+.span6    { width: 48.618784527%; }       /* 48%;    } /* grid_6  */
+.span7  { width: 57.182320438000005%; } /* 56.75%; } /* grid_7  */
+.span8  { width: 65.74585634900001%; }  /* 65.4%;  } /* grid_8  */
+.span9   { width: 74.30939226%; }        /* 74.05%; } /* grid_9  */
+.span10    { width: 82.87292817100001%; }  /* 82.7%;  } /* grid_10 */
+.span11 { width: 91.436464082%; }       /* 91.35%; } /* grid_11 */
+.span12 { width: 99.999999993%; }       /* 100%;   } /* grid_12 */
+
+// layout & column defaults
+.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+  margin-left: 2.762430939%;
 }

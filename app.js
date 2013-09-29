@@ -4,6 +4,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
     //var $messages = $('#messages'),
     var $disciplines = $('.checkbox input'),
         $railLines = $('#rail-lines'),
+        $search_results = $('.search-results'),
         // tableName = "lan_data_set",
         // cartoViz = "http://cs-chris.cartodb.com/api/v2/viz/ab1e8ce0-18c1-11e3-9831-5532403f69e3/viz.json",
         tableName = "merge",
@@ -44,13 +45,10 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
                 data : {'q' : query+' AND the_geom IS NOT NULL'}
             })
             .done(function(data) {
-                console.log('results',data.total_rows);
+                $search_results.html('SHOWING ' +data.total_rows+' ORGANIZATIONS');
             })
             .fail(function(e) {
                 console.log("error", e);
-            })
-            .always(function() {
-                console.log("complete");
             });
         }
     }

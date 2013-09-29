@@ -1,17 +1,18 @@
 /*********************
- MENU 
+ MENU
 *********************/
 .top-menu {
     @extend %fill-width;
     @extend %theme-primary;
 
     height: $menu-height;
+    padding-top : $padding-M;
 }
 
 .logo {
     width : $logo-width;
     margin-left : $margin-M;
-    padding-top : $padding-M;
+
 }
 
 
@@ -36,13 +37,13 @@
     min-height : 76px;
 }
 
-.box-tab {  
+.box-tab {
     @extend %theme-primary-inverse;
     position: absolute;
     width : 35px;
-    top: 0; 
+    top: 0;
     left: -35px;
-    
+
 
     .bt-key {
         margin-top: 13px;
@@ -59,12 +60,12 @@
 
     width : 0;
     margin-left : 7.5px;
-    padding : $padding-S $padding-S  0 0;   
+    padding : $padding-S $padding-S  0 0;
 }
 
 
 .box-tab-toggle {
-    padding : $padding-S 0 $padding-S 0;    
+    padding : $padding-S 0 $padding-S 0;
     text-align : center;
     font-size : 85%;
     border-top : solid 1px white;
@@ -86,13 +87,13 @@
 // .filters .box-tab { top : $filters-tab-top }
 
 /*********************
- MAP 
+ MAP
 *********************/
-.map-container { 
+.map-container {
     @extend %fill-height;
 }
 
-#map { 
+#map {
     @extend %fill-screen;
 }
 

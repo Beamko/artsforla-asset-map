@@ -1,5 +1,5 @@
 /*********************
- GRID GLOBALS 
+ GRID GLOBALS
 *********************/
 .clearfix {
   zoom: 1;
@@ -8,10 +8,12 @@
 }
 
 .pull-left {
+    position : relative;
     float: left;
 }
 
 .pull-right {
+    position : relative;
     float: right !important;
 }
 
@@ -33,7 +35,7 @@
 }
 
 /*********************
- 3D 
+ 3D
 *********************/
 %arrange-front {
 	position : relative;

@@ -1,12 +1,13 @@
 /*********************
- COLORS 
+ COLORS
 *********************/
 $white : white;
 $red : #ee483d;
 $tan-Light : #edece6;
 $tan-Medium : #c4c3b4;
-$tan-dark : #96947B; 
+$tan-dark : #96947B;
 $pink : lighten($red, 25%);
+$light-pink : lighten($red, 35%);
 
 /*Legend*/
 $discipline-border-color : #919178;
@@ -21,9 +22,8 @@ $government-icon-color : blue;
 $informal-icon-color : green;
 $non-profit-icon-color : gold;
 
-
 /*********************
- DIMENSION 
+ DIMENSION
 *********************/
 $padding-XS: 0.25em;
 $padding-S: 0.5em;
@@ -37,11 +37,11 @@ $margin-M : 1.5em;
 $margin-L : 2em;
 
 /*legend*/
-$square-width : 10.5714285714%; 
+$square-width : 10.5714285714%;
 $square-margin : 4%;
 
 /*********************
- TYPOGRAPHY 
+ TYPOGRAPHY
 *********************/
 /*options: atrament-web || tablet-gothic-condensed*/
 $font-name : "tablet-gothic-condensed";
@@ -57,7 +57,7 @@ $logo-width : 16em;
 $key-tab-top : 23px;
 $filters-tab-top : 57px;
 
-$map-controller-width : 24em;
+$map-controller-width : 22.928176794%;;
 
 
 

@@ -1,4 +1,5 @@
 .DS_Store
+.jshintrc
 .sass-cache/
 jam/.DS_Store
 arts-for-la.sublime-project

@@ -1,7 +1,7 @@
 %theme-primary {
 	@extend %arrange-front;
 	@extend %red-shadow;
-	
+
 	@include set-font($font-name);
 
 	color : $red;
@@ -15,7 +15,7 @@
 		color : $white;
 		background-color : $red;
 	}
-	
+
 }
 
 a.primary {
@@ -26,10 +26,20 @@ a.primary {
 %theme-primary-inverse {
 	@extend %arrange-front;
 	@extend %red-shadow;
-	
+
 	@include set-font($font-name);
 
 	color : $white;
 	background-color : $red;
-	
+
+}
+
+%theme-primary-inverse-flat {
+    @extend %arrange-front;
+
+    @include set-font($font-name);
+
+    color : $white;
+    background-color : $red;
+
 }
