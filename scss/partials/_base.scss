@@ -33,6 +33,7 @@
     position : relative;
     margin : $margin-M;
     margin-left : $margin-M+$margin-L;
+    min-width: 16em;
 
 }
 
@@ -49,28 +50,31 @@
 
 
     .bt-key {
-        margin-top: 13px;
+        margin-top: 12px;
+        margin-bottom: 18px;
     }
 
     .bt-filters {
-        margin-top: 37px;
+        margin-top: 47px;
+        margin-bottom: 18px;
     }
 }
 
 .box-tab-vertical {
-    @include transform(rotate(-90deg) );
 
-    width : 0;
-    margin-left : 7.5px;
-    padding : $padding-S $padding-S  0 0;
+   @include transform(rotate(-90deg) );
+    margin-left : -2px;
+   letter-spacing: .2em;
+
 }
 
 
 .box-tab-toggle {
-    padding : $padding-S 0 $padding-S 0;
+    padding : $padding-S+.1em 0 $padding-S 0;
     text-align : center;
     font-size : 85%;
     border-top : solid 1px white;
+    font-size: .8em;
     cursor : pointer;
 }
 
