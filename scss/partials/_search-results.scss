@@ -1,7 +1,7 @@
 .search-results-container {
     div {
         padding : $padding-XS;
-        
+
     }
 }
 
@@ -9,7 +9,6 @@
     height : 2.1em;
     background : $light-pink;
     padding-left:0.8em !important;
-    
 }
 
 .reset-search-button {
@@ -23,5 +22,5 @@
     i.ss-icon{font-size: 0.8em;}
 }
 .reset-search-button:hover{
-	background : darken($red, 8%);
+	background: darken($red, 8%);
 }

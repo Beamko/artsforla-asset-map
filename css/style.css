@@ -509,13 +509,6 @@ html, body {
 /*********************
  LEGEND 7-COLUMN GRID
 *********************/
-.discipline-icon, .funding-icon, .size-icon, .type-icon {
-  margin-left: 4%;
-  padding: 0 0%; }
-
-.discipline-icon, .funding-icon, .tiny-org {
-  width: 10.57143%; }
-
 /*********************
  12-COLUMN GRID
 *********************/
@@ -586,6 +579,12 @@ html, body {
 .text-center {
   text-align: center; }
 
+/*********************
+ LAYOUT
+*********************/
+.text-center {
+  text-align: center; }
+
 /*Custom Mixin to adjust box-tab top*/
 .top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper {
   color: #ee483d;
@@ -636,7 +635,8 @@ a.primary {
 .box {
   position: relative;
   margin: 1.5em;
-  margin-left: 3.5em; }
+  margin-left: 3.5em;
+  min-width: 16em; }
 
 .key-container {
   min-height: 76px; }
@@ -647,9 +647,11 @@ a.primary {
   top: 0;
   left: -35px; }
   .box-tab .bt-key {
-    margin-top: 13px; }
+    margin-top: 12px;
+    margin-bottom: 18px; }
   .box-tab .bt-filters {
-    margin-top: 37px; }
+    margin-top: 47px;
+    margin-bottom: 18px; }
 
 .box-tab-vertical {
   -webkit-transform: rotate(-90deg);
@@ -658,15 +660,15 @@ a.primary {
   -o-transform: rotate(-90deg);
   -transform: rotate(-90deg);
   transform: rotate(-90deg);
-  width: 0;
-  margin-left: 7.5px;
-  padding: 0.5em 0.5em 0 0; }
+  margin-left: -2px;
+  letter-spacing: .2em; }
 
 .box-tab-toggle {
-  padding: 0.5em 0 0.5em 0;
+  padding: 0.6em 0 0.5em 0;
   text-align: center;
   font-size: 85%;
   border-top: solid 1px white;
+  font-size: .8em;
   cursor: pointer; }
 
 .legend-container, .filters-form-container {
@@ -699,7 +701,8 @@ a.primary {
   height: auto; }
 
 .checkbox-container {
-  margin-top: 0.5em; }
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
 
 .checkbox {
   width: 50%; }
@@ -752,60 +755,70 @@ div.cartodb-popup div.carto-db-close-button-container {
 .icon-set {
   margin: 0.25em 0 0.25em 0; }
 
-.discipline-icon {
-  border: 1px dashed #919178; }
+.discipline-icon-container div, .type-icon-container div {
+  width: 30px;
+  height: 30px; }
 
-.size-icon {
-  background-color: #ee483d; }
-
-.type-icon {
-  background-image: url("../assets/shape_icons.png");
-  height: 30px;
-  width: 16px;
-  overflow: hidden; }
+.size-icon-container div {
+  height: 30px; }
 
 /*DISCIPLINE*/
 .dance-icon {
-  background-color: #c5daf2; }
+  background: url("../assets/sprite-sheet.png") no-repeat left top; }
 
 .film-icon {
-  background-color: #fff1bb; }
+  background: url("../assets/sprite-sheet.png") no-repeat -30px top; }
+
+.literary-icon {
+  background: url("../assets/sprite-sheet.png") no-repeat -60px top; }
 
 .music-icon {
-  background-color: #fae0be; }
+  background: url("../assets/sprite-sheet.png") no-repeat -90px top; }
 
 .theater-icon {
-  background-color: #efc0c0; }
+  background: url("../assets/sprite-sheet.png") no-repeat -120px top; }
 
 .visual-icon {
-  background-color: #dea99d; }
+  background: url("../assets/sprite-sheet.png") no-repeat -150px top; }
 
 .multi-discipline-icon {
-  background-color: #e4c5d5; }
+  background: url("../assets/sprite-sheet.png") no-repeat -180px top; }
 
 /*SIZE*/
+.tiny-org {
+  background: url("../assets/sprite-sheet.png") no-repeat 0px -30px;
+  width: 15px; }
+
 .small-org {
-  width: 12.57143%; }
+  background: url("../assets/sprite-sheet.png") no-repeat -30px -30px;
+  width: 20px;
+  margin-left: 8px; }
 
 .medium-org {
-  width: 14.57143%; }
+  background: url("../assets/sprite-sheet.png") no-repeat -60px -30px;
+  width: 30px;
+  margin-left: 8px; }
 
 .large-org {
-  width: 16.57143%; }
+  background: url("../assets/sprite-sheet.png") no-repeat -90px -30px;
+  width: 30px;
+  margin-left: 2px; }
 
 /*TYPE*/
-/*FUNDING STRUCTURE*/
-.commercial-icon {
-  border: solid 3px #ee483d; }
+.presenting-icon {
+  background: url("../assets/sprite-sheet.png") no-repeat 0px -60px; }
 
-.government-icon {
-  border: solid 3px blue; }
+.educational-icon {
+  background: url("../assets/sprite-sheet.png") no-repeat -30px -60px; }
 
-.informal-icon {
-  border: solid 3px green; }
+.community-icon {
+  background: url("../assets/sprite-sheet.png") no-repeat -60px -60px; }
 
-.non-profit-icon {
-  border: solid 3px gold; }
+.infrastructure-icon {
+  background: url("../assets/sprite-sheet.png") no-repeat -90px -60px; }
+
+.multi-type-icon {
+  background: url("../assets/sprite-sheet.png") no-repeat -120px -60px; }
 
 .search-results-container div {
   padding: 0.25em; }
@@ -866,6 +879,7 @@ div.cartodb-popup div.carto-db-close-button-container {
   position: relative;
   display: block;
   overflow: hidden;
+  padding-left: 0.5em;
   background-color: #ee483d;
   background-clip: padding-box;
   color: white;
