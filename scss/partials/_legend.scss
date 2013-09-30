@@ -2,18 +2,13 @@
     margin : $margin-XXS 0 $margin-XXS 0;
 }
 
-.discipline-icon-container, .type-icon-container {
-    div {
-        width : 30px;
-        height : 30px;
-    }
+.discipline-icon, .type-icon, .size-icon {
+    height : 30px;
+}
+.discipline-icon, .type-icon {
+    width : 30px;
 }
 
-.size-icon-container {
-    div {
-        height : 30px;
-    }
-}
 /*DISCIPLINE*/
 .dance-icon {
     background : url('../assets/sprite-sheet.png') no-repeat left top;

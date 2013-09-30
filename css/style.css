@@ -169,13 +169,13 @@ html, body { height: 100%; }
 
 /********************* GRID GLOBALS
 *********************/
-.clearfix, .row, .row div { zoom: 1; }
-.clearfix:before, .row:before, .row div:before, .clearfix:after, .row:after, .row div:after { content: ""; display: table; }
-.clearfix:after, .row:after, .row div:after { clear: both; }
+.clearfix, .row, .row .cell { zoom: 1; }
+.clearfix:before, .row:before, .row .cell:before, .clearfix:after, .row:after, .row .cell:after { content: ""; display: table; }
+.clearfix:after, .row:after, .row .cell:after { clear: both; }
 
-.pull-left, .row div { position: relative; float: left; }
+.pull-left, .row .cell { float: left; }
 
-.pull-right { position: relative; float: right !important; }
+.pull-right { float: right !important; }
 
 .first { margin-left: 0 !important; }
 
@@ -193,8 +193,6 @@ html, body { height: 100%; }
 *********************/
 .top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab { box-shadow: 0px 8px 15px -5px #f48a83; }
 
-/********************* LEGEND 7-COLUMN GRID
-*********************/
 /********************* 12-COLUMN GRID
 *********************/
 .span1 { width: 5.801104972%; }
@@ -315,9 +313,9 @@ div.cartodb-popup div.carto-db-close-button-container { position: absolute; top:
 /** CartoDB2.0 popup styles (DEFAULT) */
 .icon-set { margin: 0.25em 0 0.25em 0; }
 
-.discipline-icon-container div, .type-icon-container div { width: 30px; height: 30px; }
+.discipline-icon, .type-icon, .size-icon { height: 30px; }
 
-.size-icon-container div { height: 30px; }
+.discipline-icon, .type-icon { width: 30px; }
 
 /*DISCIPLINE*/
 .dance-icon { background: url("../assets/sprite-sheet.png") no-repeat left top; }
