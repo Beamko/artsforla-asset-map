@@ -321,7 +321,7 @@ div.cartodb-popup div.carto-db-close-button-container { position: absolute; top:
 
 .discipline-icon, .type-icon, .size-icon { height: 30px; }
 
-.discipline-icon, .type-icon { width: 30px; }
+.discipline-icon, .type-icon { width: 25px; margin-left: 5px; }
 
 /*DISCIPLINE*/
 .dance-icon { background: url("../assets/sprite-sheet.png") no-repeat left top; }

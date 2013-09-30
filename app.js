@@ -6,10 +6,8 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
         $railLines = $('#rail-lines'),
         $search_results = $('.search-results'),
         $reset = $('.reset-search-button');
-        // tableName = "lan_data_set",
-        // cartoViz = "http://cs-chris.cartodb.com/api/v2/viz/ab1e8ce0-18c1-11e3-9831-5532403f69e3/viz.json",
-        tableName = "merge",
-        cartoViz = "http://cs-chris.cartodb.com/api/v2/viz/c34d4a60-1e6e-11e3-bc0f-f9e40de5c4b9/viz.json",
+        tableName = "cultural_assets",
+        cartoViz = "http://artsforla.cartodb.com/api/v2/viz/e38b761c-2986-11e3-bdf6-616cd6b630f4/viz.json",
         filters = {},
         SelectedLine = "",
         self=this;
@@ -44,7 +42,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
 
     function getResultsCount(query, join) {
         $.ajax({
-            url: 'http://cs-chris.cartodb.com/api/v2/sql',
+            url: 'http://artsforla.cartodb.com/api/v2/sql',
             type: 'GET',
             dataType: 'json',
             data : {'q' : query+join+'the_geom IS NOT NULL'}
@@ -142,8 +140,8 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
             $('.js-metroChildFilter').addClass('u-isHiddenVisually');
             if ('target' in filter) {$('.' + filter.target).removeClass('u-isHiddenVisually');}
             /*draw rail line*/
-            var url = "http://a.tiles.mapbox.com/v3/civservchris.metroLines/{z}/{x}/{y}.png";
-            if ( "mblayer" in filter)  {url = "http://a.tiles.mapbox.com/v3/civservchris."+filter.mblayer+"/{z}/{x}/{y}.png" ;}
+            var url = "http://a.tiles.mapbox.com/v3/arts4la.ArtsForLA_basemap/{z}/{x}/{y}.png"; //full rail lines layer
+            if ( "mblayer" in filter)  {url = "http://a.tiles.mapbox.com/v3/arts4la."+filter.mblayer+"/{z}/{x}/{y}.png" ;}
             railLines.setUrl( url );
             /*submit query*/
             if ("station" in filters) {delete filters.station;}
@@ -188,11 +186,11 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
     });
     new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 
-    L.tileLayer('http://a.tiles.mapbox.com/v3/examples.map-zgrqqx0w/{z}/{x}/{y}.png', {
+    L.tileLayer('http://a.tiles.mapbox.com/v3/arts4la.redLine/{z}/{x}/{y}.png', { //basemap layer
         attribution: 'Mapbox'
     }).addTo(map);
 
-    var railLines = L.tileLayer('http://a.tiles.mapbox.com/v3/civservchris.metroLines/{z}/{x}/{y}.png', {
+    var railLines = L.tileLayer('http://a.tiles.mapbox.com/v3/arts4la.ArtsForLA_basemap/{z}/{x}/{y}.png', { //full rail lines layer
         attribution: 'Mapbox'
     });
     railLines.addTo(map);
