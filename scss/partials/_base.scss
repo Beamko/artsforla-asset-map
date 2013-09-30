@@ -12,7 +12,11 @@
 .logo {
     width : $logo-width;
     margin-left : $margin-M;
+}
 
+.tagline {
+    line-height: 1.4em;
+    margin-top: -0.4em;
 }
 
 
@@ -26,7 +30,6 @@
 }
 
 .box {
-    //@extend %theme-primary;
     position : relative;
     margin : $margin-M;
     margin-left : $margin-M+$margin-L;
@@ -55,7 +58,6 @@
 }
 
 .box-tab-vertical {
-    //@include transform-origin(0 bottom);
     @include transform(rotate(-90deg) );
 
     width : 0;
@@ -83,8 +85,6 @@
     height : 0;
 }
 
-// #legend .box-tab { top : $key-tab-top}
-// .filters .box-tab { top : $filters-tab-top }
 
 /*********************
  MAP

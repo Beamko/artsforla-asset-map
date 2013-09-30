@@ -173,9 +173,9 @@ html, body { height: 100%; }
 .clearfix:before, .row:before, .row .cell:before, .clearfix:after, .row:after, .row .cell:after { content: ""; display: table; }
 .clearfix:after, .row:after, .row .cell:after { clear: both; }
 
-.pull-left, .row .cell { float: left; }
+.pull-left, .row .cell { position: relative; float: left; }
 
-.pull-right { float: right !important; }
+.pull-right { position: relative; float: right !important; }
 
 .first { margin-left: 0 !important; }
 
@@ -235,7 +235,11 @@ html, body { height: 100%; }
 
 /********************* FONTS
 *********************/
-.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab, .reset-search-button { font-family: "tablet-gothic-condensed", sans-serif; font-style: normal; font-weight: 400; text-transform: uppercase; }
+.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab, .reset-search-button { font-family: "tablet-gothic-condensed", sans-serif; font-style: normal; font-weight: 400; text-transform: uppercase; letter-spacing: 0.1em; }
+
+/********************* LAYOUT
+*********************/
+.text-center { text-align: center; }
 
 /********************* LAYOUT
 *********************/
@@ -256,9 +260,11 @@ a.primary { color: #ee483d; text-decoration: none; }
 *********************/
 /********************* MENU
 *********************/
-.top-menu { height: 5em; padding-top: 0.75em; }
+.top-menu { height: 5.3em; padding-top: 1.5em; }
 
-.logo { width: 16em; margin-left: 1.5em; }
+.logo { width: 14em; margin-left: 1.5em; }
+
+.tagline { line-height: 1.4em; margin-top: -0.4em; }
 
 /********************* MAP CONTROLS
 *********************/
@@ -354,9 +360,12 @@ div.cartodb-popup div.carto-db-close-button-container { position: absolute; top:
 
 .search-results-container div { padding: 0.25em; }
 
-.search-results { height: 2.5em; background: #fce3e1; }
+.search-results { height: 2.1em; background: #fce3e1; padding-left: 0.8em !important; }
 
-.reset-search-button { width: 8em; margin-left: 0; cursor: pointer; }
+.reset-search-button { width: 9em; margin-left: 0; cursor: pointer; height: 2.1em; padding: 0 !important; padding-left: 0.5em !important; }
+.reset-search-button i.ss-icon { font-size: 0.8em; }
+
+.reset-search-button:hover { background: #eb2517; }
 
 .chosen-container-single .chosen-single, .chosen-container-single .chosen-single div { padding: 0.25em; box-sizing: content-box; }
 
