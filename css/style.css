@@ -833,11 +833,15 @@ div.cartodb-popup div.carto-db-close-button-container {
 
 .search-results-container div {
   padding: 0.25em; }
+.search-results-container .row {
+  padding: 0; }
 
 .search-results {
   height: 2.1em;
-  background: #fce3e1;
-  padding-left: 0.8em !important; }
+  background: #f2746c;
+  padding-left: 0.8em !important;
+  color: #fff;
+  border-right: solid 1px #fff; }
 
 .reset-search-button {
   width: 9em;
