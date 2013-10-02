@@ -63,6 +63,7 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png');
     white-space: nowrap;
     line-height: 24px;
   }
+  .chosen-single:hover { background-color: $dark-red; }
   .chosen-default {
     color: #999;
   }
@@ -110,7 +111,7 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png');
   }
   .chosen-drop {
     margin-top: -1px;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0;
     background-clip: padding-box;
     border : solid 2px $red;
   }

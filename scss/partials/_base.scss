@@ -78,6 +78,8 @@
     cursor : pointer;
 }
 
+.box-tab-toggle:hover { background-color: $dark-red;}
+
 .legend-container, .filters-form-container {
     @extend %theme-primary;
 
@@ -104,6 +106,18 @@
 .leaflet-bar {
     box-shadow: 0 0 8px lighten($red, 15%);
     border: none;
+}   
+
+.leaflet-control-zoom-in, 
+.leaflet-control-zoom-out {
+    -webkit-border-top-left-radius: 0px !important;
+	border-top-left-radius: 0px !important;
+	-webkit-border-top-right-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	 -webkit-border-bottom-left-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	-webkit-border-bottom-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
 }
 
 .leaflet-control-zoom a {
