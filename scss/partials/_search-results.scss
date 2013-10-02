@@ -2,12 +2,15 @@
     div {
         padding : $padding-XS;
     }
+    .row{ padding:0;}
 }
 
 .search-results {
     height : 2.1em;
-    background : $light-pink;
+    background : lighten($red, 10%);
     padding-left:0.8em !important;
+    color: #fff;
+    border-right: solid 1px #fff;
 }
 
 .reset-search-button {
@@ -22,5 +25,5 @@
 }
 
 .reset-search-button:hover {
-    background : darken($red, 8%);
+    background : $dark-red;
 }
