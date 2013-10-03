@@ -396,34 +396,77 @@
 
 <!-- INFOWINDOW TEMPLATE -->
 <script type="infowindow/html" id="infowindow_afla">
-  <div id="flip-this" class="cartodb-popup">
-      <div class="carto-db-close-button-container"><a href="#close" class="close primary"><i class="ss-icon">close</i></a></div>
+  <div class="cartodb-popup">
+      <div class="carto-db-close-button-container"><a href="#close" class="close primary"><i class="ss-icon">close</i></a>
+      </div>
      <div class="cartodb-popup-content-wrapper">
-       <div class="cartodb-popup-header">
-          <h3>{{content.data.org_name}}</h3>
-       </div>
-       <div class="cartodb-popup-content">
-          <div>{{content.data.org_address}},{{content.data.city}} {{content.data.zip_code}}</div>
-      {{#content.data.disciplines}}
-        <div><h4>DISCIPLINES</h4>{{content.data.disciplines}}</div>
-      {{/content.data.disciplines}}
+        <div class="cartodb-popup-header">
+          <h2>{{content.data.org_name}}</h2>
+        </div>
+        <div class="popup-content cell span12 first">
+            <div><h4>ADDRESS</h4>{{content.data.org_address}}<br> {{content.data.city}} {{content.data.zip_code}}</div>
+            {{#content.data.disciplines}}
+            <div><h4>DISCIPLINES</h4>{{content.data.disciplines}}</div>
+             {{/content.data.disciplines}}
 
-      {{#content.data.org_type}}
-        <div><h4>ORGANIZATION TYPE</h4>{{content.data.org_type}}</div>
-      {{/content.data.org_type}}
+              {{#content.data.org_type}}
+            <div><h4>ORGANIZATION TYPE</h4>{{content.data.org_type}}</div>
+              {{/content.data.org_type}}
 
-      {{#content.data.art_activities}}
-        <div><h4>ACTIVITIES</h4>{{content.data.art_activities}}</div>
-      {{/content.data.art_activities}}
-      {{#content.data.events_per_month}}
-        <div>{{content.data.events_per_month}}</div>
-      {{/content.data.events_per_month}}
-      <!-- <button class="flip-toggle">More</button> --
-       </div>
+              {{#content.data.art_activities}}
+                <div><h4>ACTIVITIES</h4>{{content.data.art_activities}}</div>
+              {{/content.data.art_activities}}
+
+              {{#content.data.events_per_month}}
+                <div>{{content.data.events_per_month}}</div>
+              {{/content.data.events_per_month}}
+        </div>
+        <div class="row popup-extended-container u-isHiddenVisually">
+            <div class="span6 cell first">
+                <h3>PRIMARY INFO</h3>
+                <div>{{content.data.org_address}}<br>{{content.data.city}} {{content.data.zip_code}}</div>
+
+                {{#content.data.phone}}
+                <div>{{content.data.phone}}</div>
+                {{/content.data.phone}}
+
+                {{#content.data.email}}
+                <div>{{content.data.email}}</div>
+                {{/content.data.email}}
+
+                {{#content.data.disciplines}}
+                <div><h4>DISCIPLINES</h4>{{content.data.disciplines}}</div>
+                {{/content.data.disciplines}}
+
+                {{#content.data.description}}
+                <div class="">{{content.data.description}}</div>
+                {{/content.data.description}}
+
+                {{#content.data.org_type}}
+                <div><h4>ORGANIZATION TYPE</h4>{{content.data.org_type}}</div>
+                {{/content.data.org_type}}
+
+                {{#content.data.funding_structure}}
+                <div>{{content.data.funding_structure}}</div>
+                {{/content.data.funding_structure}}
+
+            </div>
+            <div class="span6 cell last">
+                <h3>ACTIVITIES</h3>
+                {{#content.data.art_activities}}
+                <div>{{content.data.art_activities}}</div>
+                {{/content.data.art_activities}}
+                <h3>DETAILS</h3>
+                {{#content.data.year_founded}}
+                <div>Year Founded : {{content.data.year_founded}}</div>
+                {{/content.data.year_founded}}
+
+            </div>
+        </div>
+        <div><a href='#' class="popup-toggle-extended">More</a></div>
      </div>
      <div class="cartodb-popup-tip-container"></div>
   </div>
-
 </script>
 
 <!-- SCRIPT INIT -->

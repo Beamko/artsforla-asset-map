@@ -234,16 +234,12 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
             var sublayer = layer.getSubLayer(0);
             sublayer.infowindow.set('template', $('#infowindow_afla').html());
             sublayer.on('featureClick', function(){
-                $('.cartodb-infowindow').on("click", function(){
-                    // if ($(e.target).hasClass('flip-toggle') ) {
-                    /*custom toggle code here*/
-                    // var toggle = e.target,
-                    //  front = $('#flip-this')[0],
-                    //  back = $('#flip-back').html();
-                    // console.log('front',front);
-                    // console.log('back',back);
-                    // flippant.flip(front,back,'card');
-                    //}
+                $('.cartodb-infowindow').on("click", function(e){
+                    if ($(e.target).hasClass('popup-toggle-extended')){
+                        $('.popup-extended-container').removeClass('u-isHiddenVisually');
+                        $('.popup-content').addClass('u-isHiddenVisually');
+                        $(e.target).parents('.cartodb-popup').addClass('extended');
+                    }
                 });
             });
             createSelector(layer);
