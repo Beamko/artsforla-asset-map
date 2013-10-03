@@ -7,9 +7,10 @@
 
 .search-results {
     height : 2.1em;
-    background : lighten($red, 10%);
+   //background : lighten($red, 39%);
     padding-left:0.8em !important;
-    color: #fff;
+    border-left: 6px $red solid;
+    color: $red;
     border-right: solid 1px #fff;
 }
 
