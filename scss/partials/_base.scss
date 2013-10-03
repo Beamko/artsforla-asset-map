@@ -106,7 +106,11 @@
 .leaflet-bar {
     box-shadow: 0 0 8px lighten($red, 15%);
     border: none;
-}   
+}
+.leaflet-bar:hover {
+    box-shadow: 0 0 8px lighten($red, 15%);
+    border: none;
+}      
 
 .leaflet-control-zoom-in, 
 .leaflet-control-zoom-out {
@@ -120,7 +124,25 @@
 	border-bottom-right-radius: 0px !important;
 }
 
+.leaflet-control-zoom-in:hover, 
+.leaflet-control-zoom-out:hover {
+    -webkit-border-top-left-radius: 0px !important;
+	border-top-left-radius: 0px !important;
+	-webkit-border-top-right-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	 -webkit-border-bottom-left-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	-webkit-border-bottom-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+
 .leaflet-control-zoom a {
+    color : $red;
+    width: 30px;
+    height : 30px;
+}
+
+.leaflet-control-zoom a:hover {
     color : $red;
     width: 30px;
     height : 30px;
