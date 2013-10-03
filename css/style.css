@@ -308,13 +308,18 @@ input[type="checkbox"]:checked + label span { background: url(../assets/checkbox
 
 .cartodb-popup-content-wrapper { box-sizing: content-box !important; }
 
-div.cartodb-popup { background: none; }
+div.cartodb-popup { background: none; width: 226px; height: auto; padding: 7px 0 0 0; margin: 0; background: url("../img/light.png") no-repeat -226px 0; }
+div.cartodb-popup h4 { display: block; width: auto; margin: 0.25em 0; padding: 0; font: normal 1em "Helvetica Neue","Helvetica",Arial; color: #96947b; text-transform: uppercase; word-wrap: break-word; }
 
-div.cartodb-popup div.cartodb-popup-content-wrapper { background: white; }
+div.cartodb-popup-header h2 { margin-bottom: 1em; }
+
+div.cartodb-popup.extended { width: 500px; }
+
+div.cartodb-popup div.cartodb-popup-content-wrapper { background: white; width: auto; max-width: none; }
 
 div.cartodb-popup div.carto-db-close-button-container { position: absolute; top: 10px; right: -16px; width: 26px; height: 26px; padding: 0; background: none; font-size: 75%; opacity: 1; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1); filter: alpha(opacity=100); z-index: 999; }
 
-/********************* FROM CARTO DB 
+/********************* FROM CARTO DB
 *********************/
 /** CartoDB2.0 popup styles (DEFAULT) */
 .icon-set { margin: 0.25em 0 0.25em 0; }

@@ -1,14 +1,45 @@
 .cartodb-popup-content-wrapper {
-	@extend %theme-primary;
-	box-sizing : content-box !important;
+    @extend %theme-primary;
+    box-sizing : content-box !important;
 }
 
 div.cartodb-popup {
-	background: none;
+    background: none;
+     width:226px;
+    height:auto;
+    padding:7px 0 0 0;
+    margin:0;
+    background:url('../img/light.png') no-repeat -226px 0;
+
+     h4 {
+        display:block;
+        width: auto;
+        margin: 0.25em 0;
+        padding: 0;
+        font: normal 1em "Helvetica Neue","Helvetica",Arial;
+        color : $tan-dark;
+        text-transform:uppercase;
+        word-wrap: break-word;
+    }
+}
+
+div.cartodb-popup-header {
+    h2 {
+        margin-bottom: $margin-S;
+    }
+}
+
+div.cartodb-popup.extended {
+    width : 500px;
+}
+
+.popup-content, .popup-content-extended {
 }
 
 div.cartodb-popup div.cartodb-popup-content-wrapper {
-	background: $white;
+    background: $white;
+    width : auto;
+    max-width: none;
 }
 
 div.cartodb-popup div.carto-db-close-button-container {
@@ -28,7 +59,7 @@ div.cartodb-popup div.carto-db-close-button-container {
 }
 
 /*********************
- FROM CARTO DB 
+ FROM CARTO DB
 *********************/
   /**
    *  CartoDB2.0 popup styles (DEFAULT)
@@ -144,7 +175,7 @@ div.cartodb-popup div.carto-db-close-button-container {
 //     padding-top:0;
 //   }
 
-  
+
 //   /* Custom scroll in CartoDB content */
 
 //   div.cartodb-popup .jspContainer {
@@ -156,7 +187,7 @@ div.cartodb-popup div.carto-db-close-button-container {
 //   div.cartodb-popup .jspContainer * {
 //     outline: none;
 //   }
-  
+
 //   div.cartodb-popup .jspPane {
 //     position: absolute;
 //     padding:4px 0 0 0!important;
@@ -255,7 +286,7 @@ div.cartodb-popup div.carto-db-close-button-container {
 //     float: left;
 //     height: 100%;
 //   }
-  
+
 //   * html div.cartodb-popup .jspCorner {
 //     margin: 0 -3px 0 0;
 //   }
