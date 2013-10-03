@@ -59,6 +59,8 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
         $('input[type="checkbox"]:checked').attr('checked', false);
         $('a.chosen-single>span').html('Any');
         $('.js-childFilter').addClass('u-isHiddenVisually');
+        $('.js-metroChildFilter').addClass('u-isHiddenVisually');
+        railLines.setUrl( 'http://a.tiles.mapbox.com/v3/arts4la.ArtsForLA_basemap/{z}/{x}/{y}.png' );
     }
 
     function createSelector(layer) {
