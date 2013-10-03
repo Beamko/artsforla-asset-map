@@ -1,0 +1,12 @@
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.jshintrc
+*.sublime-project
+*.sublime-workspace
+bower_components/
+components/

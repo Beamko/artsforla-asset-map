@@ -62,8 +62,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
     }
 
     function createSelector(layer) {
-        var searchTerms = [],
-            currentParentFilter;
+        var searchTerms = [];
 
         $reset.click(function(){
             filters = {};
@@ -103,34 +102,36 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
         $('.js-selectFilter').change(function() {
             /*show child-filter, if any*/
             var filter = $("option:selected",this)[0].dataset;
+            /*generate query*/
+            var queryColumn = this.dataset.column,
+                value = $("option:selected",this).val(),
+                query = " ILIKE '%" + value + "%'";
 
-            var familyValues = []; //refactor
-            var familyValuesString = ' ILIKE ANY (ARRAY[';
             $(this).siblings('.js-childFilter').addClass('u-isHiddenVisually');
             if ('target' in filter ) {
                 var $childFilter = $('.' + filter.target);
                 $childFilter.removeClass('u-isHiddenVisually');
+                var familyValues = []; //refactor
+                var familyValuesString = ' ILIKE ANY (ARRAY[';
                 /*grab values of child filter*/
                 $.each($('option', $childFilter), function(index, option) {
                     if ($(this).val() !== 'Any') {
                         familyValues.push($(this).val());
                     }
                 });
+                /*generate child filter string*/
+                for ( var i = 0; i < familyValues.length; i++ ) {
+                    familyValuesString += "'%" + familyValues[i] + "%'";
+                    if ( i < familyValues.length-1 ) {
+                        familyValuesString += ",";
+                    }
+                 }
+                familyValuesString += '])';
+                query = familyValuesString;
             }
-            /*generate child filter string*/
-            for ( var i = 0; i < familyValues.length; i++ ) {
-                familyValuesString += "'%" + familyValues[i] + "%'";
-                if ( i < familyValues.length-1 ) {
-                    familyValuesString += ",";
-                }
-             }
-            familyValuesString += '])';
 
-            /*generate query*/
-            var queryColumn = this.dataset.column;
-            var value = currentParentFilter = $("option:selected",this).val();
             if (value !== "Any") {
-                filters[queryColumn] = queryColumn + familyValuesString;
+                filters[queryColumn] = queryColumn + query;
             } else {
                 delete filters[queryColumn];
             }
@@ -158,8 +159,6 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
 
             if (value !== "Any") {
                 filters[queryColumn] = queryColumn + " ILIKE '%" + value + "%'" ;
-            // } else if (currentParentFilter !== "Any") {
-            //         filters[queryColumn] = queryColumn + familyValuesString;
             } else {
                  filters[queryColumn] = queryColumn + familyValuesString;
             }
