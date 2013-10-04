@@ -254,7 +254,7 @@ CONTROLLER FORM
 *********************/
     $('.legend-row').tooltip({
         selector: "a[data-toggle=tooltip]",
-        trigger : 'hover'
+        html : 'true',
     });
 
     $('.chosen').chosen({disable_search:true, inherit_select_classes:true});
