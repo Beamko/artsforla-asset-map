@@ -216,7 +216,8 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
     var map = new L.Map('map', {
         center: [34.056,-118.235],
         zoom: 11,
-        zoomControl : false
+        zoomControl : false,
+        scrollWheelZoom : false
     });
     new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
 
