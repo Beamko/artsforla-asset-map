@@ -5,22 +5,30 @@
 
 div.cartodb-popup {
     background: none;
-     width:226px;
+    width:300px;
     height:auto;
     padding:7px 0 0 0;
     margin:0;
-    background:url('../img/light.png') no-repeat -226px 0;
+	//background : url('../assets/down-arrow.png') no-repeat -46px -82px !important;
+
 
      h4 {
         display:block;
         width: auto;
         margin: 0.25em 0;
         padding: 0;
-        font: normal 1em "Helvetica Neue","Helvetica",Arial;
+        font: normal 1em $font-name ;
         color : $tan-dark;
         text-transform:uppercase;
         word-wrap: break-word;
+        margin-top: 1em;
     }
+}
+
+div.cartodb-popup-tip-container {
+	
+	background : url('../assets/red_down.png') no-repeat -43px -76px !important;
+	//box-shadow: 0px 8px 15px -5px #f48a83;
 }
 
 div.cartodb-popup-header {
@@ -44,13 +52,13 @@ div.cartodb-popup div.cartodb-popup-content-wrapper {
 
 div.cartodb-popup div.carto-db-close-button-container {
      position:absolute;
-     top:10px;
-     right:-16px;
+     top:26px;
+     right:6px;
      width:26px;
      height:26px;
      padding:0;
      background: none;
-     font-size: 75%;
+     font-size: 100%;
      opacity:1;
      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
