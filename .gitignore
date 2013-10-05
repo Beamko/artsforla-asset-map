@@ -10,3 +10,4 @@ Thumbs.db
 *.sublime-workspace
 bower_components/
 components/
+app-ck.js
