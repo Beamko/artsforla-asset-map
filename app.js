@@ -5,9 +5,9 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
     var $disciplines = $('.checkbox input'),
         $railLines = $('#rail-lines'),
         $search_results = $('.search-results'),
-        $reset = $('.reset-search-button');
-        tableName = "cultural_assets",
-        cartoViz = "http://artsforla.cartodb.com/api/v2/viz/e38b761c-2986-11e3-bdf6-616cd6b630f4/viz.json",
+        $reset = $('.reset-search-button'),
+        tableName = "culturalassetdata_merge",
+        cartoViz = "http://artsforla.cartodb.com/api/v2/viz/7f3b21ec-2df7-11e3-98b8-7d88c13e1f97/viz.json",
         filters = {},
         SelectedLine = "",
         self=this;
@@ -116,7 +116,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
                 var familyValues = []; //refactor
                 var familyValuesString = ' ILIKE ANY (ARRAY[';
                 /*grab values of child filter*/
-                $.each($('option', $childFilter), function(index, option) {
+                $.each($('option', $childFilter), function() {
                     if ($(this).val() !== 'Any') {
                         familyValues.push($(this).val());
                     }
@@ -127,7 +127,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
                     if ( i < familyValues.length-1 ) {
                         familyValuesString += ",";
                     }
-                 }
+                }
                 familyValuesString += '])';
                 query = familyValuesString;
             }
@@ -146,23 +146,23 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
             var value = $("option:selected",this).val();
             var familyValues = []; //refactor
             var familyValuesString = ' ILIKE ANY (ARRAY[';
-            $.each($('option',this), function(index, option) {
-                 if ($(this).val() !== 'Any') {
+            $.each($('option',this), function() {
+                if ($(this).val() !== 'Any') {
                     familyValues.push($(this).val());
                 }
             });
             for ( var i = 0; i < familyValues.length; i++ ) {
                 familyValuesString += "'%" + familyValues[i] + "%'";
                 if ( i < familyValues.length-1 ) {
-                        familyValuesString += ",";
-                    }
-             }
+                    familyValuesString += ",";
+                }
+            }
             familyValuesString += '])';
 
             if (value !== "Any") {
                 filters[queryColumn] = queryColumn + " ILIKE '%" + value + "%'" ;
             } else {
-                 filters[queryColumn] = queryColumn + familyValuesString;
+                filters[queryColumn] = queryColumn + familyValuesString;
             }
             serialize(filters, layer);
         });
