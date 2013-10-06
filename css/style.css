@@ -326,6 +326,7 @@ div.cartodb-popup-tip-container { background: url("../assets/red_down.png") no-r
 div.cartodb-popup-header h2 { margin-bottom: 1em; max-width: 13em; }
 
 div.cartodb-popup.extended { width: 500px; }
+div.cartodb-popup.extended div.cartodb-popup-header h2 { max-width: 23em; }
 
 div.popup-info-block { margin-bottom: 1em; color: #96947b; }
 div.popup-info-block h3, div.popup-info-block h4 { color: #ee483d; }

@@ -33,6 +33,12 @@ div.cartodb-popup-header {
 
 div.cartodb-popup.extended {
     width : 500px;
+
+    div.cartodb-popup-header {
+        h2 {
+            max-width: 23em;
+        }
+    }
 }
 
 div.popup-info-block {
