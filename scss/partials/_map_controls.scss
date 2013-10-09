@@ -1,0 +1,70 @@
+/*********************
+ MAP CONTROLS
+*********************/
+.map-controller {
+    @extend %fill-height;
+    width : $map-controller-width;
+    background : transparent;
+}
+
+.box {
+    position : relative;
+    margin : $margin-M;
+    margin-left : $margin-M+$margin-L;
+    min-width: 16em;
+
+}
+
+.key-container {
+    min-height : 76px;
+}
+
+.box-tab {
+    @extend %theme-primary-inverse;
+    position: absolute;
+    width : 35px;
+    top: 0;
+    left: -35px;
+
+
+    .bt-key {
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+
+    .bt-filters {
+        margin-top: 47px;
+        margin-bottom: 18px;
+    }
+}
+
+.box-tab-vertical {
+
+   @include transform(rotate(-90deg) );
+    margin-left : -2px;
+   letter-spacing: .2em;
+
+}
+
+
+.box-tab-toggle {
+    padding : $padding-S+.1em 0 $padding-S 0;
+    text-align : center;
+    font-size : 85%;
+    border-top : solid 1px white;
+    font-size: .8em;
+    cursor : pointer;
+}
+
+.box-tab-toggle:hover { background-color: $dark-red;}
+
+.legend-container, .filters-form-container {
+    @extend %theme-primary;
+
+    padding: $padding-L;
+}
+
+.box-hidden {
+    visibility : hidden;
+    height : 0;
+}

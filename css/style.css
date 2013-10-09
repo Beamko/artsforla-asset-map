@@ -163,7 +163,7 @@ html, body { height: 100%; }
 
 .top-menu { display: block !important; width: 100% !important; }
 
-.map-controller, .map-container { display: block !important; height: 100%; }
+.map-container, .map-controller { display: block !important; height: 100%; }
 
 .flex-image { max-width: 100%; height: auto; vertical-align: top; }
 
@@ -266,6 +266,27 @@ a.primary { color: #ee483d; text-decoration: none; }
 
 .tagline { line-height: 1.4em; margin-top: -0.4em; }
 
+/*********************
+SCAFFOLDING
+*********************/
+/********************* MAP
+*********************/
+#map { top: 85px; height: auto; }
+
+.leaflet-bar { box-shadow: 0 0 8px #f48a83; border: none; }
+
+.leaflet-bar:hover { box-shadow: 0 0 8px #f48a83; border: none; }
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out { -webkit-border-top-left-radius: 0px !important; border-top-left-radius: 0px !important; -webkit-border-top-right-radius: 0px !important; border-top-right-radius: 0px !important; -webkit-border-bottom-left-radius: 0px !important; border-bottom-left-radius: 0px !important; -webkit-border-bottom-right-radius: 0px !important; border-bottom-right-radius: 0px !important; }
+
+.leaflet-control-zoom-in:hover, .leaflet-control-zoom-out:hover { -webkit-border-top-left-radius: 0px !important; border-top-left-radius: 0px !important; -webkit-border-top-right-radius: 0px !important; border-top-right-radius: 0px !important; -webkit-border-bottom-left-radius: 0px !important; border-bottom-left-radius: 0px !important; -webkit-border-bottom-right-radius: 0px !important; border-bottom-right-radius: 0px !important; }
+
+.leaflet-control-zoom a { color: #ee483d; width: 30px; height: 30px; }
+
+.leaflet-control-zoom a:hover { color: #ee483d; width: 30px; height: 30px; }
+
+.leaflet-bar-part { border-bottom: solid 1px #facdca; }
+
 /********************* MAP CONTROLS
 *********************/
 .map-controller { width: 22.92818%; background: transparent; }
@@ -287,24 +308,6 @@ a.primary { color: #ee483d; text-decoration: none; }
 .legend-container, .filters-form-container { padding: 1em; }
 
 .box-hidden { visibility: hidden; height: 0; }
-
-/********************* MAP
-*********************/
-.leaflet-bar { box-shadow: 0 0 8px #f48a83; border: none; }
-
-.leaflet-bar:hover { box-shadow: 0 0 8px #f48a83; border: none; }
-
-.leaflet-control-zoom-in, .leaflet-control-zoom-out { -webkit-border-top-left-radius: 0px !important; border-top-left-radius: 0px !important; -webkit-border-top-right-radius: 0px !important; border-top-right-radius: 0px !important; -webkit-border-bottom-left-radius: 0px !important; border-bottom-left-radius: 0px !important; -webkit-border-bottom-right-radius: 0px !important; border-bottom-right-radius: 0px !important; }
-
-.leaflet-control-zoom-in:hover, .leaflet-control-zoom-out:hover { -webkit-border-top-left-radius: 0px !important; border-top-left-radius: 0px !important; -webkit-border-top-right-radius: 0px !important; border-top-right-radius: 0px !important; -webkit-border-bottom-left-radius: 0px !important; border-bottom-left-radius: 0px !important; -webkit-border-bottom-right-radius: 0px !important; border-bottom-right-radius: 0px !important; }
-
-.leaflet-control-zoom a { color: #ee483d; width: 30px; height: 30px; }
-
-.leaflet-control-zoom a:hover { color: #ee483d; width: 30px; height: 30px; }
-
-.leaflet-bar-part { border-bottom: solid 1px #facdca; }
-
-#messages { position: absolute; bottom: 0; left: 10px; width: 35%; height: auto; }
 
 .checkbox-container { margin-top: 0.5em; margin-bottom: 0.5em; }
 
