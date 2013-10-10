@@ -68,6 +68,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
 
         $reset.click(function(){
             filters = {};
+            searchTerms = [];
             resetFiltersForm();
             serialize(filters, layer);
         });
@@ -84,7 +85,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
             }
 
             if ( searchTerms.length ) {
-                var discipline = "disciplines ILIKE ANY (ARRAY[ ";
+                var discipline = "parent_discipline ILIKE ANY (ARRAY[ ";
                 for ( var i = 0; i < searchTerms.length; i++ ) {
                     discipline += "'%"+searchTerms[i]+"%'";
                     if ( i < searchTerms.length-1 ) {
@@ -131,8 +132,10 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
                 familyValuesString += '])';
                 query = familyValuesString;
             }
-
-            if (value !== "Any") {
+            console.log(value);
+            if (value === "Multi") {
+                filters[queryColumn] = "parent_org_type ILIKE '%Multi%'";
+            }  else if (value !== "Any") {
                 filters[queryColumn] = queryColumn + query;
             } else {
                 delete filters[queryColumn];
