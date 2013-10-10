@@ -42,3 +42,11 @@
 @import "partials/search-results";
 @import "partials/select";
 @import "partials/tooltip";
+
+/*********************
+ RESPONSIVE
+*********************/
+@media only screen
+and (max-width : 1440px) {
+    @import "responsive/1440down";
+}
