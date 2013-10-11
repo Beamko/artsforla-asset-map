@@ -1,10 +1,10 @@
 /*global require, L, cartodb*/
 require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojson/expoLine','geojson/goldLine','geojson/greenLine','geojson/redLine'], function (_,$) {
 
-    //var $messages = $('#messages'),
     var $disciplines = $('.checkbox input'),
         $railLines = $('#rail-lines'),
         $search_results = $('.search-results'),
+        default_search_text = "SELECT A SEARCH FILTER TO DISPLAY CULTURAL ORGANIZATIONS",
         $reset = $('.reset-search-button'),
         tableName = "culturalassetdata_merge",
         cartoViz = "http://artsforla.cartodb.com/api/v2/viz/7f3b21ec-2df7-11e3-98b8-7d88c13e1f97/viz.json",
@@ -14,8 +14,9 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
 
     function serialize(filters, layer) {
         var searchTerms = [],
-            query = $.isEmptyObject(filters) ? "SELECT * FROM " + tableName : "SELECT * FROM "+ tableName + " WHERE ",
+            query = "SELECT * FROM "+ tableName + " WHERE ",
             results_count_join = $.isEmptyObject(filters) ? " WHERE " : " AND ";
+        query += $.isEmptyObject(filters) ?  "org_name ILIKE '%********%'" : ''; //nasty reset hack
 
         /*add filter properties to query string*/
         if ( Object.keys(filters).length ) {
@@ -35,9 +36,20 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
                 }
             }
         }
+        update_map_markers(filters, layer, query, results_count_join);
+    }
+
+    function update_map_markers(filters, layer, query, results_count_join) {
         console.log(query);
-        layer.setQuery(query);
-        getResultsCount(query, results_count_join);
+        layer.getSubLayer(0).setSQL(query);
+        layer.setOpacity(0.85);
+        setTimeout(function(){
+            if ($.isEmptyObject(filters) ) {
+                $search_results.html(default_search_text);
+            } else {
+                getResultsCount(query, results_count_join);
+            }
+        }, 1000);
     }
 
     function getResultsCount(query, join) {
@@ -66,7 +78,8 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
     function createSelector(layer) {
         var searchTerms = [];
 
-        $reset.click(function(){
+        $reset.click(function(e){
+            e.preventDefault();
             filters = {};
             searchTerms = [];
             resetFiltersForm();
@@ -98,7 +111,7 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
             } else {
                 delete filters.discipline;
             }
-            serialize(filters, layer);
+            serialize(filters,layer);
         });
 
         /*standard select filter from cartoDB*/
@@ -218,10 +231,14 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
 
     /*load cartoDB markers*/
     var markerLayer = cartodb.createLayer(map, cartoViz);
-    markerLayer.addTo(map)
+    markerLayer
+        .addTo(map)
         .on('done', function(layer) {
+            layer.setOpacity(0);
             var sublayer = layer.getSubLayer(0);
             sublayer.infowindow.set('template', $('#infowindow_afla').html());
+            sublayer.setSQL("SELECT * FROM "+tableName+" WHERE org_name ILIKE '%*********%'"); //null query hack
+            sublayer.setInteraction(true);
             sublayer.on('featureClick', function(){
                 $('.cartodb-infowindow').on("click", function(e){
                     if ($(e.target).hasClass('popup-toggle-extended')){
@@ -232,7 +249,6 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
                 });
             });
             createSelector(layer);
-            getResultsCount("SELECT * FROM " + tableName," WHERE ");
         });
 
 /*********************
