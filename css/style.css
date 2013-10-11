@@ -181,7 +181,7 @@ ol, ul { margin: 0; list-style: none; padding: 0; }
 
 /********************* 3D
 *********************/
-.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab, .reset-search-button { position: relative; z-index: 99; }
+.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab { position: relative; z-index: 99; }
 
 .u-isHidden { display: none !important; visibility: hidden !important; }
 
@@ -233,7 +233,7 @@ ol, ul { margin: 0; list-style: none; padding: 0; }
 
 /********************* FONTS
 *********************/
-.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab, .reset-search-button { font-family: "tablet-gothic-condensed", sans-serif; font-style: normal; font-weight: 400; text-transform: uppercase; letter-spacing: 0.1em; }
+.top-menu, .legend-container, .filters-form-container, .cartodb-popup-content-wrapper, .box-tab { font-family: "tablet-gothic-condensed", sans-serif; font-style: normal; font-weight: 400; text-transform: uppercase; letter-spacing: 0.1em; }
 
 /********************* LAYOUT
 *********************/
@@ -252,8 +252,6 @@ a.primary { color: #ee483d; text-decoration: none; }
 
 .box-tab { color: white; background-color: #ee483d; }
 
-.reset-search-button { color: white; background-color: #ee483d; }
-
 /********************* PARTIALS
 *********************/
 /********************* MENU
@@ -264,9 +262,6 @@ a.primary { color: #ee483d; text-decoration: none; }
 
 .tagline { line-height: 1.4em; margin-top: -0.4em; }
 
-/*********************
-SCAFFOLDING
-*********************/
 /********************* MAP
 *********************/
 #map { top: 85px; height: auto; }
@@ -287,7 +282,7 @@ SCAFFOLDING
 
 /********************* MAP CONTROLS
 *********************/
-.map-controller { width: 22.92818%; background: transparent; }
+.map-controller { width: 21.5em; background: transparent; }
 
 .box { position: relative; margin: 1.5em; margin-left: 3.5em; min-width: 16em; }
 
@@ -306,6 +301,10 @@ SCAFFOLDING
 .legend-container, .filters-form-container { padding: 1em; }
 
 .box-hidden { visibility: hidden; height: 0; }
+
+.reset-search-button { color: #f8b7b2; cursor: pointer; }
+.reset-search-button a { color: #f8b7b2; }
+.reset-search-button a:hover { color: #eb2517; }
 
 .checkbox-container { margin-top: 0.5em; margin-bottom: 0.5em; }
 
@@ -390,12 +389,7 @@ div.cartodb-popup div.carto-db-close-button-container { position: absolute; top:
 .search-results-container div { padding: 0.25em; }
 .search-results-container .row { padding: 0; }
 
-.search-results { height: 2.1em; padding-left: 0.8em !important; border-left: 6px #ee483d solid; color: #ee483d; border-right: solid 1px #fff; }
-
-.reset-search-button { width: 9em; margin-left: 0; cursor: pointer; height: 2.1em; padding: 0 !important; padding-left: 0.5em !important; }
-.reset-search-button i.ss-icon { font-size: 0.8em; }
-
-.reset-search-button:hover { background: #eb2517; }
+.search-results { height: 2.1em; padding-left: 0.8em !important; border-left: 6px #ee483d solid; color: #ee483d; border-right: solid 1px #fff; margin-right: 3em; }
 
 .chosen-container-single .chosen-single, .chosen-container-single .chosen-single div { padding: 0.25em; box-sizing: content-box; }
 

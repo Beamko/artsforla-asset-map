@@ -68,3 +68,15 @@
     visibility : hidden;
     height : 0;
 }
+
+.reset-search-button {
+    color: $pink;
+    cursor: pointer;
+    a{
+        color: $pink;
+        &:hover {
+            color : $dark-red;
+        }
+    }
+}
+

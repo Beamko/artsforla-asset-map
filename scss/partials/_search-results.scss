@@ -12,19 +12,5 @@
     border-left: 6px $red solid;
     color: $red;
     border-right: solid 1px #fff;
-}
-
-.reset-search-button {
-    @extend %theme-primary-inverse-flat;
-    width: 9em;
-    margin-left: 0;
-    cursor: pointer;
-    height : 2.1em;
-    padding: 0 !important;
-    padding-left: 0.5em !important;
-    i.ss-icon {font-size: 0.8em;}
-}
-
-.reset-search-button:hover {
-    background : $dark-red;
+    margin-right: 3em;
 }
