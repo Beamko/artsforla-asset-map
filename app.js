@@ -114,28 +114,29 @@ require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojs
             if ('target' in filter ) {
                 var $childFilter = $('.' + filter.target);
                 $childFilter.removeClass('u-isHiddenVisually');
-                var familyValues = []; //refactor
-                var familyValuesString = ' ILIKE ANY (ARRAY[';
-                /*grab values of child filter*/
-                $.each($('option', $childFilter), function() {
-                    if ($(this).val() !== 'Any') {
-                        familyValues.push($(this).val());
-                    }
-                });
-                /*generate child filter string*/
-                for ( var i = 0; i < familyValues.length; i++ ) {
-                    familyValuesString += "'%" + familyValues[i] + "%'";
-                    if ( i < familyValues.length-1 ) {
-                        familyValuesString += ",";
-                    }
-                }
-                familyValuesString += '])';
-                query = familyValuesString;
+                // var familyValues = []; //refactor
+                // var familyValuesString = ' ILIKE ANY (ARRAY[';
+                // /*grab values of child filter*/
+                // $.each($('option', $childFilter), function() {
+                //     if ($(this).val() !== 'Any') {
+                //         familyValues.push($(this).val());
+                //     }
+                // });
+                // generate child filter string
+                // for ( var i = 0; i < familyValues.length; i++ ) {
+                //     familyValuesString += "'%" + familyValues[i] + "%'";
+                //     if ( i < familyValues.length-1 ) {
+                //         familyValuesString += ",";
+                //     }
+                // }
+                // familyValuesString += '])';
+                // query = familyValuesString;
             }
             console.log(value);
-            if (value === "Multi") {
-                filters[queryColumn] = "parent_org_type ILIKE '%Multi%'";
-            }  else if (value !== "Any") {
+            // if (value === "Multi") {
+            //     filters[queryColumn] = "parent_org_type ILIKE '%Multi%'";
+            // }  else
+            if (value !== "Any") {
                 filters[queryColumn] = queryColumn + query;
             } else {
                 delete filters[queryColumn];

@@ -1,0 +1,77 @@
+#culturalassetdata_merge[parent_org_type="Presenting"]{
+  marker-file: url('http://civil-services.com/artsforla/icons/square.svg');
+
+}
+
+#culturalassetdata_merge[parent_org_type="Educational"]{
+  marker-file: url('http://civil-services.com/artsforla/icons/circle.svg');
+}
+
+#culturalassetdata_merge[parent_org_type="Community"]{
+  marker-file: url('http://civil-services.com/artsforla/icons/triangle.svg');
+}
+
+#culturalassetdata_merge[parent_org_type="Infrastructure"]{
+  marker-file: url('http://civil-services.com/artsforla/icons/diamond.svg');
+}
+
+#culturalassetdata_merge[parent_org_type="Multi"]{
+  marker-file: url('http://civil-services.com/artsforla/icons/pentagon.svg');
+}
+
+#culturalassetdata_merge[parent_discipline="Dance"]{
+  marker-fill:#CFE2F5;
+}
+
+#culturalassetdata_merge[parent_discipline="Film"]{
+  marker-fill:#D9EAD0;
+}
+
+#culturalassetdata_merge[parent_discipline="Literary"]{
+  marker-fill:#FFF3C7;
+}
+
+
+#culturalassetdata_merge[parent_discipline="Music"]{
+  marker-fill:#FAE0BE;
+}
+
+
+#culturalassetdata_merge[parent_discipline="Theater"]{
+  marker-fill:#EFC0C0;
+}
+
+#culturalassetdata_merge[parent_discipline="Visual"]{
+  marker-fill:#DEA99D;
+}
+
+#culturalassetdata_merge[parent_discipline="Multi"]{
+  marker-fill:#E4C5D5;
+}
+
+#culturalassetdata_merge[org_size="Tiny"]{
+  marker-width:12;
+}
+
+#culturalassetdata_merge[org_size="Small"]{
+  marker-width:16;
+}
+
+#culturalassetdata_merge[org_size="Med"]{
+  marker-width:20;
+}
+
+#culturalassetdata_merge[org_size="Large"]{
+  marker-width:24;
+}
+
+#culturalassetdata_merge{
+  marker-width: 12;
+  marker-fill: #ee483d;
+  marker-opacity: 1.0;
+  marker-allow-overlap: true;
+  marker-placement: point;
+  marker-file: url('http://civil-services.com/artsforla/icons/circle.svg')
+}
+  marker-line-opacity: 0.9;
+}
