@@ -2006,11 +2006,6 @@ var jam = {
             "location": "jam/bootstrap-amd"
         },
         {
-            "name": "chosen-js",
-            "location": "jam/chosen-js",
-            "main": "chosen/chosen.jquery.js"
-        },
-        {
             "name": "jquery",
             "location": "jam/jquery",
             "main": "dist/jquery.js"
@@ -2019,17 +2014,15 @@ var jam = {
             "name": "lodash",
             "location": "jam/lodash",
             "main": "./dist/lodash.compat.js"
+        },
+        {
+            "name": "text",
+            "location": "jam/text",
+            "main": "text.js"
         }
     ],
     "version": "0.2.17",
-    "shim": {
-        "chosen-js": {
-            "deps": [
-                "jquery"
-            ],
-            "exports": "chosen"
-        }
-    }
+    "shim": {}
 };
 
 if (typeof require !== "undefined" && require.config) {
@@ -2040,11 +2033,6 @@ if (typeof require !== "undefined" && require.config) {
             "location": "jam/bootstrap-amd"
         },
         {
-            "name": "chosen-js",
-            "location": "jam/chosen-js",
-            "main": "chosen/chosen.jquery.js"
-        },
-        {
             "name": "jquery",
             "location": "jam/jquery",
             "main": "dist/jquery.js"
@@ -2053,16 +2041,14 @@ if (typeof require !== "undefined" && require.config) {
             "name": "lodash",
             "location": "jam/lodash",
             "main": "./dist/lodash.compat.js"
+        },
+        {
+            "name": "text",
+            "location": "jam/text",
+            "main": "text.js"
         }
     ],
-    "shim": {
-        "chosen-js": {
-            "deps": [
-                "jquery"
-            ],
-            "exports": "chosen"
-        }
-    }
+    "shim": {}
 });
 }
 else {
@@ -2073,11 +2059,6 @@ else {
             "location": "jam/bootstrap-amd"
         },
         {
-            "name": "chosen-js",
-            "location": "jam/chosen-js",
-            "main": "chosen/chosen.jquery.js"
-        },
-        {
             "name": "jquery",
             "location": "jam/jquery",
             "main": "dist/jquery.js"
@@ -2086,16 +2067,14 @@ else {
             "name": "lodash",
             "location": "jam/lodash",
             "main": "./dist/lodash.compat.js"
+        },
+        {
+            "name": "text",
+            "location": "jam/text",
+            "main": "text.js"
         }
     ],
-    "shim": {
-        "chosen-js": {
-            "deps": [
-                "jquery"
-            ],
-            "exports": "chosen"
-        }
-    }
+    "shim": {}
 };
 }
 

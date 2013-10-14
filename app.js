@@ -1,6 +1,11 @@
-/*global require, L, cartodb*/
-require(['lodash','jquery','bootstrap-amd','chosen-js','geojson/blueLine','geojson/expoLine','geojson/goldLine','geojson/greenLine','geojson/redLine'], function (_,$) {
-
+/*global require, L, cartodb, vex*/
+require([
+    'lodash',
+    'jquery',
+    'text!tpl/welcome.html',
+    'bootstrap-amd',
+    'geojson/blueLine','geojson/expoLine','geojson/goldLine','geojson/greenLine','geojson/redLine'
+], function (_,$,welcome_text) {
     var $disciplines = $('.checkbox input'),
         $railLines = $('#rail-lines'),
         $search_results = $('.search-results'),
@@ -263,8 +268,6 @@ CONTROLLER FORM
         selector: "a[data-toggle=tooltip]"
     });
 
-    $('.chosen').chosen({disable_search:true, inherit_select_classes:true});
-
     $('.box-tab-toggle').click(function() {
         var $target = $('.' + this.dataset.target);
         if ($target.hasClass('box-hidden') ) {
@@ -276,7 +279,23 @@ CONTROLLER FORM
         }
     });
 
+    $('.tagline').click(function(e){
+        e.preventDefault();
+        vex.open({
+            content : welcome_text
+        });
+    });
+
+    vex.open({
+        content : welcome_text
+    });
+
 });
+
+/*NON-AMD*/
+$('.chosen').chosen({disable_search:true, inherit_select_classes:true});
+
+
 
 
 
