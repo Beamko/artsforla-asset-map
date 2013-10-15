@@ -2,10 +2,11 @@
 require([
     'lodash',
     'jquery',
+    'chosen-js',
     'text!tpl/welcome.html',
     'bootstrap-amd',
     'geojson/blueLine','geojson/expoLine','geojson/goldLine','geojson/greenLine','geojson/redLine'
-], function (_,$,welcome_text) {
+], function (_,$,chosen,welcome_text) {
     var $disciplines = $('.checkbox input'),
         $railLines = $('#rail-lines'),
         $search_results = $('.search-results'),
@@ -286,6 +287,8 @@ CONTROLLER FORM
             content : welcome_text
         });
     });
+
+    $('.chosen').chosen({disable_search:true, inherit_select_classes:true});
 
     vex.open({
         content : welcome_text

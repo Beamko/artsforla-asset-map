@@ -2006,6 +2006,11 @@ var jam = {
             "location": "jam/bootstrap-amd"
         },
         {
+            "name": "chosen-js",
+            "location": "jam/chosen-js",
+            "main": "chosen/chosen.jquery.js"
+        },
+        {
             "name": "jquery",
             "location": "jam/jquery",
             "main": "dist/jquery.js"
@@ -2022,7 +2027,14 @@ var jam = {
         }
     ],
     "version": "0.2.17",
-    "shim": {}
+    "shim": {
+        "chosen-js": {
+            "deps": [
+                "jquery"
+            ],
+            "exports": "chosen"
+        }
+    }
 };
 
 if (typeof require !== "undefined" && require.config) {
@@ -2033,6 +2045,11 @@ if (typeof require !== "undefined" && require.config) {
             "location": "jam/bootstrap-amd"
         },
         {
+            "name": "chosen-js",
+            "location": "jam/chosen-js",
+            "main": "chosen/chosen.jquery.js"
+        },
+        {
             "name": "jquery",
             "location": "jam/jquery",
             "main": "dist/jquery.js"
@@ -2048,7 +2065,14 @@ if (typeof require !== "undefined" && require.config) {
             "main": "text.js"
         }
     ],
-    "shim": {}
+    "shim": {
+        "chosen-js": {
+            "deps": [
+                "jquery"
+            ],
+            "exports": "chosen"
+        }
+    }
 });
 }
 else {
@@ -2059,6 +2083,11 @@ else {
             "location": "jam/bootstrap-amd"
         },
         {
+            "name": "chosen-js",
+            "location": "jam/chosen-js",
+            "main": "chosen/chosen.jquery.js"
+        },
+        {
             "name": "jquery",
             "location": "jam/jquery",
             "main": "dist/jquery.js"
@@ -2074,7 +2103,14 @@ else {
             "main": "text.js"
         }
     ],
-    "shim": {}
+    "shim": {
+        "chosen-js": {
+            "deps": [
+                "jquery"
+            ],
+            "exports": "chosen"
+        }
+    }
 };
 }
 
