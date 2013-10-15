@@ -11,8 +11,8 @@ require([
         $search_results = $('.search-results'),
         default_search_text = "SELECT A SEARCH FILTER TO DISPLAY CULTURAL ORGANIZATIONS",
         $reset = $('.reset-search-button'),
-        tableName = "culturalassetdata_merge",
-        cartoViz = "http://artsforla.cartodb.com/api/v2/viz/7f3b21ec-2df7-11e3-98b8-7d88c13e1f97/viz.json",
+        tableName = "culturalassetdata_4",
+        cartoViz = "http://artsforla.cartodb.com/api/v2/viz/0e2b39c8-3546-11e3-84f8-4fedf65ac14c/viz.json",
         filters = {},
         SelectedLine = "",
         self=this;
@@ -121,13 +121,13 @@ require([
 
         /*standard select filter from cartoDB*/
         $('.js-selectFilter').change(function() {
-            /*show child-filter, if any*/
+            console.log('selectFilter called');
             var filter = $("option:selected",this)[0].dataset;
             /*generate query*/
             var queryColumn = this.dataset.column,
                 value = $("option:selected",this).val(),
                 query = " ILIKE '%" + value + "%'";
-
+             /*show child-filter, if any*/
             $(this).siblings('.js-childFilter').addClass('u-isHiddenVisually');
             if ('target' in filter ) {
                 var $childFilter = $('.' + filter.target);
@@ -247,6 +247,7 @@ require([
             sublayer.on('featureClick', function(){
                 $('.cartodb-infowindow').on("click", function(e){
                     if ($(e.target).hasClass('popup-toggle-extended')){
+                        $(e.target).addClass('u-isHiddenVisually');
                         $('.popup-extended-container').removeClass('u-isHiddenVisually');
                         $('.popup-content').addClass('u-isHiddenVisually');
                         $(e.target).parents('.cartodb-popup').addClass('extended');
@@ -293,7 +294,7 @@ CONTROLLER FORM
 });
 
 /*NON-AMD*/
-$('.chosen').chosen({disable_search:true, inherit_select_classes:true});
+
 
 
 
