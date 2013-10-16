@@ -46,7 +46,11 @@
   		margin-bottom: 1em;
   		font-size: 1.5em;
   	}
-  	div{ margin-top: 1.5em;}
+  	div.people{ margin-top: 1.5em;}
+  	div.logos{ 
+  		margin-top: 1.5em;
+  		img{margin-right: 1.5em;}
+  	}
   	border-top: dashed 1px $red;
 	margin-top: 2.5em;
 	padding-top: 1em;

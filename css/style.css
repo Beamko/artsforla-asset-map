@@ -890,7 +890,7 @@ a.primary {
 
 .logo {
   width: 14em;
-  margin-left: 1.5em; }
+  margin-left: 18px; }
 
 .tagline {
   line-height: 1.4em;
@@ -964,9 +964,9 @@ a.primary {
 
 .box-tab {
   position: absolute;
-  width: 35px;
+  width: 27px;
   top: 0;
-  left: -35px; }
+  left: -27px; }
   .box-tab .bt-key {
     margin-top: 12px;
     margin-bottom: 18px; }
@@ -1112,7 +1112,7 @@ div.cartodb-popup div.carto-db-close-button-container {
   height: 30px; }
 
 .discipline-icon, .type-icon {
-  width: 25px;
+  width: 22px;
   margin-left: 5px; }
 
 /*DISCIPLINE*/
@@ -1181,7 +1181,6 @@ div.cartodb-popup div.carto-db-close-button-container {
 .search-results {
   height: 2.1em;
   padding-left: 0.8em !important;
-  border-left: 6px #ee483d solid;
   color: #ee483d;
   border-right: solid 1px #fff;
   margin-right: 3em; }
@@ -1439,8 +1438,12 @@ a.info-tooltip {
     .vex .vex-content footer h4 {
       margin-bottom: 1em;
       font-size: 1.5em; }
-    .vex .vex-content footer div {
+    .vex .vex-content footer div.people {
       margin-top: 1.5em; }
+    .vex .vex-content footer div.logos {
+      margin-top: 1.5em; }
+      .vex .vex-content footer div.logos img {
+        margin-right: 1.5em; }
 
 .vex .vex-close {
   position: absolute;
