@@ -22,7 +22,7 @@
   .main  {
     p {
         & + p {
-            text-indent: $indent;
+            text-indent: 0;
         }
     }
   }
@@ -42,7 +42,17 @@
   }
 
   footer {
-
+  	h4{ 
+  		margin-bottom: 1em;
+  		font-size: 1.5em;
+  	}
+  	div{ margin-top: 1.5em;}
+  	border-top: dashed 1px $red;
+	margin-top: 2.5em;
+	padding-top: 1em;
+	font-size: .8em;
+	margin-bottom: 1em;
+	
   }
 }
 .vex .vex-content h1, .vex .vex-content h2, .vex .vex-content h3, .vex .vex-content h4, .vex .vex-content h5, .vex .vex-content h6, .vex .vex-content p, .vex .vex-content ul, .vex .vex-content li {
@@ -72,8 +82,8 @@
 }
 
 .vex .vex-close:hover:before, .vex .vex-close:active:before {
-  color: #777777;
-  background: #e0e0e0;
+  color: $red;
+  //background: #e0e0e0;
 }
 
 .vex .vex-dialog-form .vex-dialog-message {
