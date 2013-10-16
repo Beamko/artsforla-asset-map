@@ -281,14 +281,14 @@ CONTROLLER FORM
         }
     });
 
+    $('.chosen').chosen({disable_search:true, inherit_select_classes:true});
+
     $('.tagline').click(function(e){
         e.preventDefault();
         vex.open({
             content : welcome_text
         });
     });
-
-    $('.chosen').chosen({disable_search:true, inherit_select_classes:true});
 
     vex.open({
         content : welcome_text

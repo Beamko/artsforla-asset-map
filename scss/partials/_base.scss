@@ -18,3 +18,12 @@
     line-height: 1.4em;
     margin-top: -0.4em;
 }
+
+a.about {
+    color : $pink;
+    text-decoration: none;
+    &:hover {
+        color : $dark-red;
+        cursor: pointer;
+    }
+}

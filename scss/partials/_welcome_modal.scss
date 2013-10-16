@@ -3,61 +3,65 @@
   padding-bottom: 20px;
 }
 .vex .vex-content {
-  @extend %theme-primary;
-  padding: $padding-M 2.5em;
-  position: relative;
-  margin: 0 auto;
-  max-width: 100%;
-  width: 50em;
-
-  p {
-     color : $red;
-    text-transform: none;
-    font-size: 1.2em;
-    line-height: 1.5em;
-    & + p {
-        margin-top: $indent;
-    }
-  }
-  .main  {
-    p {
-        & + p {
-            text-indent: 0;
+    @extend %theme-primary;
+    padding: $padding-M 2.5em;
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 50em;
+    a {
+        color : $pink;
+        text-decoration: none;
+        &:hover {
+            color : $dark-red;
+            cursor: pointer;
         }
     }
-  }
-  h1 {
-  }
-  h2 {
-    margin-bottom: $margin-S;
-    color : $tan-dark;
-  }
-
-  ul {
-    margin : $margin-S 0;
-    li {
-        color : $tan-dark;
-        margin-left : $margin-S;
+    p {
+         color : $red;
+        text-transform: none;
+        font-size: 1.2em;
+        line-height: 1.5em;
+        & + p {
+            margin-top: $indent;
+        }
     }
-  }
+    .main  {
+        p {
+        & + p {
+            text-indent: 0;
+            }
+        }
+    }
+    h2 {
+        margin-bottom: $margin-S;
+        color : $tan-dark;
+    }
 
-  footer {
-  	h4{ 
-  		margin-bottom: 1em;
-  		font-size: 1.5em;
-  	}
-  	div.people{ margin-top: 1.5em;}
-  	div.logos{ 
-  		margin-top: 1.5em;
-  		img{margin-right: 1.5em;}
-  	}
-  	border-top: dashed 1px $red;
-	margin-top: 2.5em;
-	padding-top: 1em;
-	font-size: .8em;
-	margin-bottom: 1em;
-	
-  }
+    ul {
+        margin : $margin-S 0;
+        li {
+            color : $tan-dark;
+            margin-left : $margin-S;
+        }
+    }
+
+    footer {
+        h4{
+            margin-bottom: 1em;
+            font-size: 1.5em;
+        }
+        div.people{ margin-top: 1.5em;}
+        div.logos{
+            margin-top: 1.5em;
+            img{margin-right: 1.5em;}
+        }
+        border-top: dashed 1px $red;
+        margin-top: 2.5em;
+        padding-top: 1em;
+        font-size: .8em;
+        margin-bottom: 1em;
+    }
 }
 .vex .vex-content h1, .vex .vex-content h2, .vex .vex-content h3, .vex .vex-content h4, .vex .vex-content h5, .vex .vex-content h6, .vex .vex-content p, .vex .vex-content ul, .vex .vex-content li {
   // color: inherit;
