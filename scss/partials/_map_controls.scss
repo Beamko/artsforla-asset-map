@@ -22,9 +22,9 @@
 .box-tab {
     @extend %theme-primary-inverse;
     position: absolute;
-    width : 27px;
+    width : 34px;
     top: 0;
-    left: -27px;
+    left: -34px;
 
 
     .bt-key {
@@ -65,15 +65,16 @@
 }
 
 .box-hidden {
-    visibility : hidden;
-    height : 0;
+   // visibility : hidden;
+   // height : 0;
+
 }
 
 .reset-search-button {
     color: $pink;
     cursor: pointer;
     a{
-        color: $pink;
+        color: darken($pink, 15%);
         &:hover {
             color : $dark-red;
         }

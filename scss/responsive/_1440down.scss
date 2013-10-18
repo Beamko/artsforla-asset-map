@@ -5,3 +5,16 @@ body {
 #map {
     top : 70px;
 }
+
+.box-tab {
+    @extend %theme-primary-inverse;
+    position: absolute;
+    width : 27px;
+    top: 0;
+    left: -27px;
+}
+
+.logo {
+    width : $logo-width;
+    margin-left : 18px;
+}

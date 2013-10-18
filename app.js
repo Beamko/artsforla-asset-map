@@ -273,6 +273,20 @@ CONTROLLER FORM
     $('.box-tab-toggle').click(function() {
         var $target = $('.' + this.dataset.target);
         if ($target.hasClass('box-hidden') ) {
+            $target.slideToggle( 100, "swing" );
+            $target.removeClass('box-hidden');
+            $(this).children('.ss-icon').text('remove');
+        } else {
+            $target.slideToggle( 100, "swing" );
+            $target.addClass('box-hidden');
+            $(this).children('.ss-icon').text('add');
+        }
+    });
+    
+    /*
+    $('.box-tab-toggle').click(function() {
+        var $target = $('.' + this.dataset.target);
+        if ($target.hasClass('box-hidden') ) {
             $target.removeClass('box-hidden');
             $(this).children('.ss-icon').text('remove');
         } else {
@@ -280,6 +294,8 @@ CONTROLLER FORM
             $(this).children('.ss-icon').text('add');
         }
     });
+    */
+    
 
     $('.chosen').chosen({disable_search:true, inherit_select_classes:true});
 
